@@ -6,12 +6,22 @@ int main() {
     printf("Rule Breaker!!!\n");
     printf("5 + 2 = %d\n", addNumber(5, 2));
     printf("%d\n", getTriangleType(3, 4, 5));
+    int Sum;
+    Sum = sum(9, 10, 11);
+    printf("sum func. result is: %d.", Sum);
     return 0;
 }
 #endif // TEST
 
 int addNumber(int a, int b) {
     return a + b;
+}
+
+int sum(int x, int y, int z){
+    if(x>y)
+        return x+y+z;
+    else
+        return y+z;
 }
 
 int getTriangleType(int a, int b, int c) {
