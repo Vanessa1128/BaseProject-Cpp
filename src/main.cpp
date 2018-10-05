@@ -64,10 +64,10 @@ int getTriangleType(int a, int b, int c) {
 <<<<<<< Updated upstream
 int check(int num){
     if (num%2==0)
-        printf("°¸¼Æ");
+        printf("even");
         return 0;
     if (num%2==1)
-        printf("©_¼Æ");
+        printf("odd");
         return 1;
 
 }
