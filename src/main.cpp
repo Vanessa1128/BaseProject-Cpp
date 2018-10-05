@@ -36,3 +36,14 @@ int getTriangleType(int a, int b, int c) {
     }
     return -3;
 }
+
+int check(int num){
+    if (num%2==0)
+        printf("°¸¼Æ");
+        return 2;
+    if (num%2==1)
+        printf("©_¼Æ");
+        return 1;
+
+}
+
