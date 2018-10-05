@@ -50,7 +50,7 @@ int getTriangleType(int a, int b, int c) {
 int check(int num){
     if (num%2==0)
         printf("°¸¼Æ");
-        return 2;
+        return 0;
     if (num%2==1)
         printf("©_¼Æ");
         return 1;
