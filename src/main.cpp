@@ -2,14 +2,28 @@
 #include "main.h"
 
 #ifndef TEST
+int power(int a,int b){
+    int sum=1;
+    while(b!=0)
+    {
+        sum*=a;
+        b-=1;
+    }
+    return sum;
+}
 int main() {
     printf("Rule Breaker!!!\n");
     printf("5 + 2 = %d\n", addNumber(5, 2));
     printf("%d\n", getTriangleType(3, 4, 5));
+<<<<<<< Updated upstream
     int Sum;
     Sum = sum(9, 10, 11);
     printf("sum func. result is: %d.", Sum);
+=======
+    printf("%d\n", power(2,10));
+>>>>>>> Stashed changes
     return 0;
+
 }
 #endif // TEST
 
@@ -47,6 +61,7 @@ int getTriangleType(int a, int b, int c) {
     return -3;
 }
 
+<<<<<<< Updated upstream
 int check(int num){
     if (num%2==0)
         printf("°¸¼Æ");
@@ -57,3 +72,5 @@ int check(int num){
 
 }
 
+=======
+>>>>>>> Stashed changes
