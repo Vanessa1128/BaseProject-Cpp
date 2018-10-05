@@ -15,11 +15,11 @@ int main() {
     printf("Rule Breaker!!!\n");
     printf("5 + 2 = %d\n", addNumber(5, 2));
     printf("%d\n", getTriangleType(3, 4, 5));
-//<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     int Sum;
     Sum = sum(9, 10, 11);
     printf("sum func. result is: %d.", Sum);
-//=======
+=======
     printf("%d\n", power(2,10));
 //>>>>>>> Stashed changes
     return 0;
