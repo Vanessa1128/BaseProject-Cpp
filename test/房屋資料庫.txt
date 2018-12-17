@@ -1,0 +1,4 @@
+a house 30  4 
+b house 35  3 
+c house 35  5 
+d house 40  4 
