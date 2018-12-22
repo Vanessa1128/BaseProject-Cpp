@@ -1,0 +1,6 @@
+Number	Area	Rent	OtherCost	Location			PeopleNumber	Network	Room	Type		Pet	Facilities
+0	10.5	1900	200		No.60,_Fengjia_Rd.		1		Provide,60M	Share_Room	No	Table,Chair,Wardrobe,ShareWaterFountain
+1	35	2500	500		No.167,_Xi'an_St.		3		Provide,60M	Suite		Yes	Wardrobe,BedBoard,Bookcase,Fridge
+2	50.9	23000	1000		No.427,_Fuxing_Rd.		4		Provide,100M	Suite		No	Wardrobe,WashingMachine,WaterFountain,Balcony
+3	20.5	5600	700		No.98,_Fengda_Rd.		2		Not_Provide	Suite		No	Wardrobe,Table,Chair,Bookcase
+4	66	35000	1200		No.207-18,_Sec.2,_Qinghai_Rd.	7		Provide,100M	Suite		Yes	Wardrobe,AirFan,BedPackage,Sofa,Tables,Chairs
