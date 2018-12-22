@@ -1,0 +1,3 @@
+Name	Star	NumberOfHouse	Contact1		Contact2
+Joe	7	3		LineID:IamJoe		FaceBook:RentJoe
+Henry	8	2		LineID:This123Henry	Phone:0900000000
