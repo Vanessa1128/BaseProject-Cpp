@@ -49,6 +49,7 @@ typedef struct houseStruct{
 ///		    *記得* 在這裡提前宣告一下 副程式		  	 ///
 landlord* landlordBuild(); // 房東資料庫導入
 house* houseBuild(); // 房子資料庫導入
+void findHouse(); // 找房子系統進入點
 house* generate_hou(); // 產生房子節點(node)
 landlord* generate_lan(); // 產生房東節點(node)
 int printHouse(house*, landlord*); // 印出房子串列、選擇查看資訊
@@ -71,7 +72,28 @@ int main(){
 }
 
 ///////////////////////////////////////////////
-/// 副程式：		    產生房子節點(node)		  	 ///
+/// 找房子系統 主程式：		    找房子系統進入點		  	 ///
+void findHouse(){
+    house* head_hou = NULL;
+    landlord* head_lan = NULL;
+
+    /* 進行篩選 & 回傳狀態 */
+    // 狀態 0：成功&退出程式
+    // 狀態 2：成功&重新篩選
+    int state = 2;
+    while(state == 2){
+        head_hou = houseBuild(); // 建立 house linked list
+        head_lan = landlordBuild(); // 建立 landlord linked list
+        state = houseFilter(head_hou, head_lan);
+    }
+
+    printf("||> 退出找房子系統！\n");
+    return;
+}
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+/// 找房子系統 副程式：		    產生房子節點(node)		  	 ///
 house* generate_hou(){
     house *item = NULL;
     item = (house*)malloc(sizeof(house));
@@ -83,7 +105,7 @@ house* generate_hou(){
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// 副程式：		    產生房東節點(node)		  	 ///
+/// 找房子系統 副程式：		    產生房東節點(node)		  	 ///
 landlord* generate_lan(){
     landlord *item = NULL;
     item = (landlord*)malloc(sizeof(landlord));
@@ -95,7 +117,7 @@ landlord* generate_lan(){
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// 副程式：		    印出房子串列、選擇查看資訊		  	 ///
+/// 找房子系統 副程式：		    印出房子串列、選擇查看資訊		  	 ///
 int printHouse(house *head_hou, landlord *head_lan){ /* 搜索到房子後：印出房子串列、選擇查看資訊 */
 
     char name[15];
@@ -158,7 +180,7 @@ int printHouse(house *head_hou, landlord *head_lan){ /* 搜索到房子後：印出房子串
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// 副程式：		    輸入條件 & 篩選房子		  	 ///
+/// 找房子系統 副程式：		    輸入條件 & 篩選房子		  	 ///
 int houseFilter(house *head_hou, landlord *head_lan){
     house *current_hou;
     house *tempNode;
@@ -437,7 +459,7 @@ int houseFilter(house *head_hou, landlord *head_lan){
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// 副程式：		    LandlordDatabase.txt檔案 房東資料庫導入		  	 ///
+/// 找房子系統 副程式：		    LandlordDatabase.txt檔案 房東資料庫導入		  	 ///
 
 landlord* landlordBuild(){
 
@@ -483,7 +505,7 @@ landlord* landlordBuild(){
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// 副程式：		    HouseDatabase.txt檔案 房子資料庫導入		  	 ///
+/// 找房子系統 副程式：		    HouseDatabase.txt檔案 房子資料庫導入		  	 ///
 
 house* houseBuild(){
 
