@@ -4,6 +4,10 @@
 
 ///////////////////////////////////////////////
 ///		    junk、房東、房子、房客結構的宣告		  	 ///
+/*
+提醒：這裡的鏈結串列 Lindked List 是雙向不循環的
+比如： a <-> b <-> c <-> d ，但a、d未串聯，a->prev 是 a 自己，d->next 是 NULL
+*/
 typedef struct{
     char junk1[30]; char junk2[30]; char junk3[30];
     char junk4[30]; char junk5[30]; char junk6[30];
