@@ -75,6 +75,7 @@ int printHouse(house*, landlord*); // 印出房子串列、選擇查看資訊
 int houseFilter(house*, landlord*); // 輸入條件 & 篩選房子
 
 //找室友系統副程式
+void findRoomer(); // 找室友系統進入點
 roomer* generate_roo(); // 產生室友節點(node)
 int printRoomer(roomer*); // 印出室友串列、選擇查看資訊
 int roomerFilter(roomer*); // 輸入條件 & 篩選室友
@@ -634,6 +635,25 @@ int houseFilter(house *head_hou, landlord *head_lan){
         return state;
     }
 
+}
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+/// 找室友系統 主程式：		    找室友系統進入點		  	 ///
+void findRoomer(){
+    roomer* head_roo = NULL;
+
+    /* 進行篩選 & 回傳狀態 */
+    // 狀態 0：成功&退出程式
+    // 狀態 2：成功&重新篩選
+    int state = 2;
+    while(state == 2){
+        head_roo = roomerBuild(); // 建立 roomer linked list
+        state = roomerFilter(head_roo);
+    }
+
+    printf("||> 退出找室友系統！\n");
+    return;
 }
 ///////////////////////////////////////////////
 
