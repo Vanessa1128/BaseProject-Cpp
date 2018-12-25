@@ -1,5 +1,0 @@
-Number	Name	Gender	SleepTime	School				Nationality	Habit		Disease
-0	Soung	Female	02:00		National_Chung_Hsing_Univ.	Malaysia	No		No
-1	Jack	Male	23:00		Feng_Chia_Univ.			Taiwan		Snore		No
-2	Vincent	Male	22:00		Feng_Chia_Univ.			Taiwan		GrindTeeth	No
-3	Judy	Female	24:00		Overseas_Chinese_Univ.		Taiwan		No		No
