@@ -1,42 +1,66 @@
 #include<stdio.h>
 
-
+void show_menu();
 
 int main (void){
-	//showé¸å–®
-
-
-	//switchå¯«æ³• å°æ‡‰å„åŠŸèƒ½
+	
+	int option; //¥\¯à¿ï¶µ 
+	
+	show_menu();//show¿ï³æ
+	for(;;){
+		
+		if(scanf(" %d", & option) !=1 );
+		
+	}
+	
+	
+	if(option == 1){
+		
+	}
+	else if(option == 2){
+		
+	}
+	else if(option == 3){
+		
+	}
+	else{
+		
+	}
+	//switch¼gªk ¹ïÀ³¦U¥\¯à
 	//1.login
 	//2.create account
 	//3.quit
-	//4.æ”¹å¯†ç¢¼
+	//4.§ï±K½X
 
 
-} 
+}
 
 ///////////////////////////////////////////////
-///		    å‰¯ç¨‹å¼		  	 ///
+///		    °Æµ{¦¡		  	 ///
 ///////////////////////////////////////////////
 
-///é¡¯ç¤ºåŠŸèƒ½é¸å–®
+///Åã¥Ü¥\¯à¿ï³æ
 void show_menu() {
+    printf("<<Åwªï¨Ï¥Î§ä«Ç¤Í¨t²Î>>\n");
+    printf("«ö¤U¼Æ¦rÁä¿ï¾ÜªA°È\n");
+    printf("1.µn¤J  2.·s«Ø±b¸¹ 3.Â÷¶}¨t²Î\n");
+    printf("½Ğ¿é¤JªA°È¿ï¶µ:");
+}
+
+///µn¤JÅçÃÒ///		*true = µn¤J¦¨¥\ *false = µn¤J¥¢±Ñ
+bool login(/*±b¸¹±K½X*/) {
 
 }
 
-///ç™»å…¥é©—è­‰///		*true = ç™»å…¥æˆåŠŸ *false = ç™»å…¥å¤±æ•—
-bool login(/*å¸³è™Ÿå¯†ç¢¼*/) {
+///³Ğ«Ø±b¸¹///		*true = ³Ğ«Ø¦¨¥\ *false = ³Ğ«Ø¥¢±Ñ
+bool create_account(/*±b¸¹¸ê°T*/) {
 
 }
 
-///å‰µå»ºå¸³è™Ÿ///		*true = å‰µå»ºæˆåŠŸ *false = å‰µå»ºå¤±æ•—
-bool create_account(/*å¸³è™Ÿè³‡è¨Š*/) {
+///§ó§ï±K½X
+void mutator(/*±ı§ó§ïªºÂ¾*/) {
 
 }
 
-///æ›´æ”¹å¯†ç¢¼
-void mutator(/*æ¬²æ›´æ”¹çš„è·*/) {
+//µù°O »P¸ê®Æ®w³s°Êªºuser number¨ú±o°Æµ{¦¡ÁÙ¶··s¼W <<¤G¾Ü¤@>> 1.µn¤JÅçÃÒ¦^¶Ç­È¬°int = user number  2.¦h¼g¤@­Óget user numberªº°Æµ{¦¡
 
-}
-
-//è¨»è¨˜ èˆ‡è³‡æ–™åº«é€£å‹•çš„user numberå–å¾—å‰¯ç¨‹å¼é‚„é ˆæ–°å¢ <<äºŒæ“‡ä¸€>> 1.ç™»å…¥é©—è­‰å›å‚³å€¼ç‚ºint = user number  2.å¤šå¯«ä¸€å€‹get user numberçš„å‰¯ç¨‹å¼
