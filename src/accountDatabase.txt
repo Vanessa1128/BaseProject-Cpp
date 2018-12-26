@@ -1,0 +1,6 @@
+num	type	account	password
+1	l	weiweimpnkey	Hana0907
+2	r	room1	1234
+3	r	room2	0000
+4	r	room3	1234
+5	l	lord	1005
