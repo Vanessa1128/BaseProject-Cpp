@@ -1,0 +1,3 @@
+將編碼環境直接預設成UTF-8，
+
+步驟為：Tools -> Options -> Environment -> Documents -> Save documents as Unicode。
