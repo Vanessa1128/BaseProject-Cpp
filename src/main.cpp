@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 
 ///////////////////////////////////////////////
 ///		    junk、房東、房子、房客結構的宣告		  	 ///
@@ -96,9 +96,54 @@ int main() {
 	//3.quit
 	//4.改密碼
 
+	/* 測試找房子副程式 */
+	printf("\n||TEST1||\n");
+	findHouse();
+	/* 測試找室友副程式 */
+	printf("\n||TEST2||\n");
+    findRoomer();
 
 	return 0;
 }
+
+///////////////////////////////////////////////
+/// 共用 副程式：		    產生房子節點(node)		  	 ///
+/// 已利用副程式：找房子系統
+house* generate_hou() {
+	house *item = NULL;
+	item = (house*)malloc(sizeof(house));
+	item->next = NULL;
+	item->prev = NULL;
+
+	return item;
+}
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+/// 共用 副程式：		    產生房東節點(node)		  	 ///
+/// 已利用副程式：找房子系統
+landlord* generate_lan() {
+	landlord *item = NULL;
+	item = (landlord*)malloc(sizeof(landlord));
+	item->next = NULL;
+	item->prev = NULL;
+
+	return item;
+}
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+/// 共用 副程式：		    產生室友節點(node)		  	 ///
+/// 已利用副程式：找室友系統
+roomer* generate_roo() {
+	roomer *item = NULL;
+	item = (roomer*)malloc(sizeof(roomer));
+	item->next = NULL;
+	item->prev = NULL;
+
+	return item;
+}
+///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
 /// 共用 副程式：		    LandlordDatabase.txt檔案 房東資料庫導入		  	 ///
@@ -277,30 +322,6 @@ void findHouse() {
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// 找房子系統 副程式：		    產生房子節點(node)		  	 ///
-house* generate_hou() {
-	house *item = NULL;
-	item = (house*)malloc(sizeof(house));
-	item->next = NULL;
-	item->prev = NULL;
-
-	return item;
-}
-///////////////////////////////////////////////
-
-///////////////////////////////////////////////
-/// 找房子系統 副程式：		    產生房東節點(node)		  	 ///
-landlord* generate_lan() {
-	landlord *item = NULL;
-	item = (landlord*)malloc(sizeof(landlord));
-	item->next = NULL;
-	item->prev = NULL;
-
-	return item;
-}
-///////////////////////////////////////////////
-
-///////////////////////////////////////////////
 /// 找房子系統 副程式：		    印出房子串列、選擇查看資訊		  	 ///
 int printHouse(house *head_hou, landlord *head_lan) { /* 搜索到房子後：印出房子串列、選擇查看資訊 */
 
@@ -385,12 +406,12 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	printf("||> 篩選坪數？是：1；否：0 \n|>> "); // 篩選：範圍
 	scanf("%d", &filter[0]);
 	if (filter[0]) {
-		printf("||> 請輸入範圍(ex. \"10 20\")(左<右): \n|>> ");
+		printf("||> 請輸入範圍(ex. \"10.5 20\")(左<右): \n|>> ");
 		scanf("%lf %lf", &filter0_a, &filter0_b);
 		fflush(stdin);
 		/* 判定輸入有效 */
 		while (filter0_a < 0 || filter0_b < 0 || filter0_a >= filter0_b) {
-			printf("||> 請輸入正確的範圍(ex. \"10 20\")(左<右): \n|>> ");
+			printf("||> 請輸入正確的範圍(ex. \"0 36.5\")(左<右): \n|>> ");
 			scanf("%lf %lf", &filter0_a, &filter0_b);
 			fflush(stdin);
 		}
@@ -434,7 +455,7 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 		fflush(stdin);
 		/* 判定輸入有效 */
 		while (filter1_a < 0 || filter1_b < 0 || filter1_a >= filter1_b) {
-			printf("||> 請輸入正確的範圍(ex. \"3000 4000\")(左<右): \n|>> ");
+			printf("||> 請輸入正確的範圍(ex. \"2000 8000\")(左<右): \n|>> ");
 			scanf("%lf %lf", &filter1_a, &filter1_b);
 			fflush(stdin);
 		}
@@ -478,7 +499,7 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 		fflush(stdin);
 		/* 判定輸入有效 */
 		while (filter2_a <= 0 || filter2_b <= 0 || filter2_a > filter2_b) {
-			printf("||> 請輸入正確的範圍(ex. \"1 1\")(左<=右): \n|>> ");
+			printf("||> 請輸入正確的範圍(ex. \"2 5\")(左<=右): \n|>> ");
 			scanf("%d %d", &filter2_a, &filter2_b);
 			fflush(stdin);
 		}
@@ -561,11 +582,11 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	printf("||> 篩選套房/雅房？是：1；否：0 \n|>> "); // 篩選：雙選
 	scanf("%d", &filter[4]);
 	if (filter[4]) {
-		printf("||> 套房：Suite；雅房：Share(ex. \"Suite\") \n|>> ");
+		printf("||> 套房：Suite；雅房：Share(ex. \"suite\") \n|>> ");
 		scanf("%s", filter4);
 		/* 判定輸入有效 */
 		while (strcasecmp(filter4, "Suite") && strcasecmp(filter4, "Share")) {
-			printf("||> 請輸入正確的指令(ex. \"Suite\") \n|>> ");
+			printf("||> 請輸入正確的指令(ex. \"Share\") \n|>> ");
 			scanf("%s", filter4);
 			fflush(stdin);
 		}
@@ -604,11 +625,11 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	printf("||> 篩選可否養寵？是：1；否：0 \n|>> "); // 篩選：雙選
 	scanf("%d", &filter[5]);
 	if (filter[5]) {
-		printf("||> 可養寵物：Yes；不可養寵物：No(ex. \"No\") \n|>> ");
+		printf("||> 可養寵物：Yes；不可養寵物：No(ex. \"no\") \n|>> ");
 		scanf("%s", filter5);
 		/* 判定輸入有效 */
-		while (strcasecmp(filter5, "Yes") && strcasecmp(filter5, "No")) {
-			printf("||> 請輸入正確的指令(ex. \"No\") \n|>> ");
+		while (strcasecmp(filter5, "es") && strcasecmp(filter5, "No")) {
+			printf("||> 請輸入正確的指令(ex. \"Yes\") \n|>> ");
 			scanf("%s", filter5);
 			fflush(stdin);
 		}
@@ -676,18 +697,6 @@ void findRoomer() {
 
 	printf("||> 退出找室友系統！\n");
 	return;
-}
-///////////////////////////////////////////////
-
-///////////////////////////////////////////////
-/// 找室友系統 副程式：		    產生室友節點(node)		  	 ///
-roomer* generate_roo() {
-	roomer *item = NULL;
-	item = (roomer*)malloc(sizeof(roomer));
-	item->next = NULL;
-	item->prev = NULL;
-
-	return item;
 }
 ///////////////////////////////////////////////
 
