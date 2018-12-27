@@ -1038,127 +1038,146 @@ int roomerFilter(roomer *head_roo) {
 }
 ///////////////////////////////////////////////
 //新增房東,室友評分系統
-void landlordGetScore(landlord *landlordHead)//房東的評分
+void landlordGetScore(landlord *landlordHead)
 {
 	char name[20];
-	int i=0, index=-1, score=0;//引索值控制角色
-	landlord*ptr;
-	ptr=landlordHead;//ptr控制指標的位址
-
-	printf("--進入房東評分系統--\n");
+	int score=0; 
+	
+	landlord*ptr,*fprint;
+	
+	ptr=landlordHead;//ptr控制指標的位址 
+	
+	printf("--進入房東評分系統---\n");
 	printf("請輸入需要評分的對象\n");
 	scanf("%s",name);
-
+	
 	while(ptr!=NULL)
-	{
+	{ 
 	    if(strcmp(name,ptr->LandlordName)==0)
-	    {
-		 index=1;//這個評分對象存在
-		 break;
+	    {	 
+		 break;//這個評分對象存在
 	    }
-	  ptr=ptr->next;
-	}
+	  ptr=ptr->next; 
+	} 
 	/*ptr目前為存在對象*/
-
-	if(index != -1)//判斷評分對象存不存在
+	
+	if(ptr != NULL)//判斷評分對象存不存在 
 	{
-	    printf("輸入要評分對象的分數(1-10)\n");
+	    printf("輸入要評分對象的分數(1-10)\n");	
 		scanf("%d",&score);
-
-		if( score<=10 && score>=1 &&ptr->Star<=10 &&ptr->Star>=1)//已經被評分過但是還要評分的角色
-		{
-		  printf("以評分過的對象\n");
-		  ptr->Star = double(score+ptr->Star)/2;
+		
+		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1)//已經被評分過但是還要評分的角色 
+		{ 
+		  printf("---以評分過的對象---\n"); 
+		  ptr->Star = double(score+ptr->Star)/2; 
 		}
-		else if( score<=10 && score>=1)//從未評分角色
-		{
-		  ptr->Star=score;
+		else if( score<=10 && score>=1)//從未評分角色 
+		{ 
+		  ptr->Star=score; 
 		}
-		else //錯誤評分
+		else //錯誤評分 
 		{
-		 printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");
+		 printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");	
 		}
-
-	}
-	else//角色不存在輸出
+		
+	} 
+	else//角色不存在輸出 
 	{
-	 printf("輸入不存在名字 或錯誤的數字");
+	 printf("輸入不存在名字 或錯誤的數字");		
 	}
-
+    
 	if( score<=10 && score>=1)
-	{ printf("輸入記憶體的分數:%2d",ptr->Star); } //輸出評分的分數
+	{ 
+	 printf("輸入記憶體的分數:%2d",ptr->Star); 
+	} 
+	//////////////////////////////////////////////////
+	FILE *landlordFile;
+	landlordFile = fopen("LandlordDatabase.txt", "w");
+	
+	fprint=landlordHead;//指標指向標頭 
+	
+	fprintf(landlordFile,"%-15s %-10s %-10s %-30s %-30s %-30s\n","Name","UserNumber","Star","NumberOfHouse","Contact1","Contact2");
+	while(fprint != NULL)//將評分完的檔案輸入資料庫 
+	{
+	    fprintf(landlordFile,"%-15s %-10d %-10d %-30d %-30s %-30s \n",
+			     fprint->LandlordName, fprint->UserNumber, fprint->Star,
+			     fprint->NumberOfHouse, fprint->Contact1, fprint->Contact2);
+		 	
+	   fprint=fprint->next;	
+	}
+    
+	fclose(landlordFile);//關檔 
+	
 }
 void roomerGetScore(roomer*roomerHead)
 {
-	FILE *roomerFile;
-	roomerFile = fopen("RoomerDatabase.txt","w");
 
 	char name[20];
-	int i=0, index=-1, score=0;//引索值控制角色
-	roomer*ptr,*fprint;
-
-	ptr=roomerHead;//ptr控制指標的位址
-
+	int i=0 , score=0; 
+	roomer*ptr, *fprint;
+		
+	ptr=roomerHead;//ptr控制指標的位址 
+	
 	printf("--進入室友評分系統---\n");
 	printf("請輸入需要評分的對象:\n");
 	scanf("%s",name);
-
+	
 	while(ptr!=NULL)
-	{
+	{ 
 	    if(strcmp(name,ptr->RoomerName)==0)
-	    {
-		  index=1;//這個評分對象存在
-		  break;
+	    {	     
+		  break;//這個評分對象存在
 	    }
-	  ptr=ptr->next;
-	}
+	  ptr=ptr->next; 
+	} 
+
 	/*ptr目前為存在對象*/
-
-	if(index != -1)//判斷評分對象存不存在
+	
+	if(ptr != NULL)//判斷評分對象存不存在 
 	{
-	    printf("輸入要評分對象的分數(1-10)\n");
+	    printf("輸入要評分對象的分數(1-10)\n");	
 		scanf("%d",&score);
-
-		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1 )//已經被評分過但是還要評分的角色
+		
+		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1 )//已經被評分過但是還要評分的角色 
 		{
-		  printf("以評分過的對象\n");
+		  printf("---以評分過的對象---\n");
 		  ptr->Star = double(score+ptr->Star)/2;
 		}
-		else if( score<=10 && score>=1)//從未評分角色
-		{
-		  ptr->Star=score;
+		else if( score<=10 && score>=1)//從未評分角色 
+		{ 
+		  ptr->Star=score; 
 		}
-		else //錯誤評分
+		else //錯誤評分 
 		{
-		  printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");
+		  printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");	
 		}
-
-	}
-	else //角色不存在輸出
+		
+	} 
+	else //角色不存在輸出 
 	{
-	 printf("輸入不存在名字 或錯誤的數字");
+	 printf("輸入不存在名字 或錯誤的數字");		
 	}
-
+   
     if( score<=10 && score>=1)
 	{
-	 printf("輸入記憶體的分數:%2d",ptr->Star);
-	}
-
-        FILE *roomerFile1;
-	roomerFile1 = fopen("RoomerDatabase.txt","w");
-	fprint=roomerHead;
-
-	   fprintf(roomerFile1,"Name    UserNumber	Star	Gender	SleepTime	School				Nationality	Habit		Disease\n");
-	   while(fprint!=NULL)
+	   printf("輸入記憶體的分數:%2d",ptr->Star);
+    }
+	//////////////////////////////////////////////////////
+	   FILE *roomerFile;
+	   roomerFile = fopen("RoomerDatabase.txt","w");//開啟檔案 
+	   fprint=roomerHead;
+	
+	   fprintf(roomerFile,"%-15s%-14s%-8s%-10s%-15s%-40s%-20s%-20s%-20s\n","Name","UserNumber","Star","Gender","SleepTime","School","Nationality","Habit","Disease");
+	   while(fprint!=NULL)//將評分完的檔案輸入資料庫 
 	  {
-	     fprintf(roomerFile1,"%-15s %-2d %-2d %-20s %-2d %-40s %-20s %-20s %-20s\n",
-			fprint->RoomerName, fprint->UserNumber, fprint->Star,
-			fprint->Gender, fprint->SleepTime, fprint->School,
-			fprint->Nationality, fprint->Habit, fprint->Disease);
-		 fprint=fprint->next;
+	     fprintf(roomerFile,"%-15s%-14d%-8d%-10s%-15d%-40s%-20s%-20s%-20s\n",
+			     fprint->RoomerName, fprint->UserNumber, fprint->Star,
+			     fprint->Gender, fprint->SleepTime, fprint->School,
+			     fprint->Nationality, fprint->Habit, fprint->Disease);	
+		 fprint=fprint->next;	
 	  }
-
-	fclose(roomerFile);
+    
+	fclose(roomerFile);//關檔 
 }
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
