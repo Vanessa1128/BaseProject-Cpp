@@ -1,8 +1,26 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<iostream>
+///副程式宣告區
+//////////////////////////////////////////////
 void show_menu();
+//////////////////////////////////////////////
+///結構宣告
+//////////////////////////////////////////////
+typedef struct {
+	char num[8]; char type[8]; char acc[8];
+	char pas[8];
+} account_database_title;//接收帳戶資料庫的第一行
 
+typedef struct account{//帳號結構
+	int num[8];
+	char type;
+	char account[20];
+	char password[20];
+
+	struct account *next, *previous;
+} account_data;
+//////////////////////////////////////////////
 int main (void){
 
 	int option = 0; //功能選項
@@ -33,8 +51,11 @@ int main (void){
 	else if(option == 3){
 
 	}
-	else if(option == 4){
-
+	else if(option == 4){//離開
+        system("CLS");
+        printf("\n\t<<~感謝您使用本系統~>>\n");
+        printf("\n\t==按下任意鍵離開本系統==\n");
+        return 0;
 	}
 
 	//switch寫法 對應各功能
@@ -43,7 +64,7 @@ int main (void){
 	//3.quit
 	//4.改密碼
 
-    return 0;
+
 }
 
 ///////////////////////////////////////////////
