@@ -1,3 +1,5 @@
-�N�s�X���Ҫ����w�]��UTF-8�A
+將編碼環境直接預設成UTF-8，
 
-�B�J���GTools -> Options -> Environment -> Documents -> Save documents as Unicode�C
+步驟為：Tools -> Options -> Environment -> Documents -> Save documents as Unicode。
+
+12:31 李元熙：了解。今天下午17:00由於不上課，組長有空來討論嗎？
