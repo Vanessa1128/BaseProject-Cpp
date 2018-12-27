@@ -98,10 +98,12 @@ int main() {
 
 	/* 測試找房子副程式 */
 	printf("\n||TEST1||\n");
-	findHouse();
+	//findHouse();
 	/* 測試找室友副程式 */
 	printf("\n||TEST2||\n");
-    findRoomer();
+    //findRoomer();
+    /* 測試評分副程式 */
+    roomerGetScore(roomerBuild());
 
 	return 0;
 }
@@ -971,50 +973,50 @@ int roomerFilter(roomer *head_roo) {
 void landlordGetScore(landlord *landlordHead)//房東的評分
 {
 	char name[20];
-	int i=0, index=-1, score=0;//引索值控制角色 
+	int i=0, index=-1, score=0;//引索值控制角色
 	landlord*ptr;
-	ptr=landlordHead;//ptr控制指標的位址 
-	
+	ptr=landlordHead;//ptr控制指標的位址
+
 	printf("--進入房東評分系統--\n");
 	printf("請輸入需要評分的對象\n");
 	scanf("%s",name);
-	
+
 	while(ptr!=NULL)
-	{ 
+	{
 	    if(strcmp(name,ptr->LandlordName)==0)
-	    {	
-		 index=1;//這個評分對象存在 
+	    {
+		 index=1;//這個評分對象存在
 		 break;
 	    }
-	  ptr=ptr->next; 
-	} 
-	/*ptr目前為存在對象*/
-	
-	if(index != -1)//判斷評分對象存不存在 
-	{
-	    printf("輸入要評分對象的分數(1-10)\n");	
-		scanf("%d",&score);
-		
-		if( score<=10 && score>=1 &&ptr->Star<=10 &&ptr->Star>=1)//已經被評分過但是還要評分的角色 
-		{ 
-		  printf("以評分過的對象\n"); 
-		  ptr->Star = double(score+ptr->Star)/2; 
-		}
-		else if( score<=10 && score>=1)//從未評分角色 
-		{ 
-		  ptr->Star=score; 
-		}
-		else //錯誤評分 
-		{
-		 printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");	
-		}
-		
-	} 
-	else//角色不存在輸出 
-	{
-	 printf("輸入不存在名字 或錯誤的數字");		
+	  ptr=ptr->next;
 	}
-    
+	/*ptr目前為存在對象*/
+
+	if(index != -1)//判斷評分對象存不存在
+	{
+	    printf("輸入要評分對象的分數(1-10)\n");
+		scanf("%d",&score);
+
+		if( score<=10 && score>=1 &&ptr->Star<=10 &&ptr->Star>=1)//已經被評分過但是還要評分的角色
+		{
+		  printf("以評分過的對象\n");
+		  ptr->Star = double(score+ptr->Star)/2;
+		}
+		else if( score<=10 && score>=1)//從未評分角色
+		{
+		  ptr->Star=score;
+		}
+		else //錯誤評分
+		{
+		 printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");
+		}
+
+	}
+	else//角色不存在輸出
+	{
+	 printf("輸入不存在名字 或錯誤的數字");
+	}
+
 	if( score<=10 && score>=1)
 	{ printf("輸入記憶體的分數:%2d",ptr->Star); } //輸出評分的分數
 }
@@ -1022,70 +1024,70 @@ void roomerGetScore(roomer*roomerHead)
 {
 	FILE *roomerFile;
 	roomerFile = fopen("RoomerDatabase.txt","w");
-	
+
 	char name[20];
-	int i=0, index=-1, score=0;//引索值控制角色 
+	int i=0, index=-1, score=0;//引索值控制角色
 	roomer*ptr,*fprint;
-		
-	ptr=roomerHead;//ptr控制指標的位址 
-	
+
+	ptr=roomerHead;//ptr控制指標的位址
+
 	printf("--進入室友評分系統---\n");
 	printf("請輸入需要評分的對象:\n");
 	scanf("%s",name);
-	
+
 	while(ptr!=NULL)
-	{ 
+	{
 	    if(strcmp(name,ptr->RoomerName)==0)
-	    {	
-		  index=1;//這個評分對象存在 
+	    {
+		  index=1;//這個評分對象存在
 		  break;
 	    }
-	  ptr=ptr->next; 
-	} 
+	  ptr=ptr->next;
+	}
 	/*ptr目前為存在對象*/
-	
-	if(index != -1)//判斷評分對象存不存在 
+
+	if(index != -1)//判斷評分對象存不存在
 	{
-	    printf("輸入要評分對象的分數(1-10)\n");	
+	    printf("輸入要評分對象的分數(1-10)\n");
 		scanf("%d",&score);
-		
-		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1 )//已經被評分過但是還要評分的角色 
+
+		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1 )//已經被評分過但是還要評分的角色
 		{
-		  printf("以評分過的對象\n"); 
+		  printf("以評分過的對象\n");
 		  ptr->Star = double(score+ptr->Star)/2;
 		}
-		else if( score<=10 && score>=1)//從未評分角色 
-		{ 
-		  ptr->Star=score; 
-		}
-		else //錯誤評分 
+		else if( score<=10 && score>=1)//從未評分角色
 		{
-		  printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");	
+		  ptr->Star=score;
 		}
-		
-	} 
-	else //角色不存在輸出 
-	{
-	 printf("輸入不存在名字 或錯誤的數字");		
+		else //錯誤評分
+		{
+		  printf("評分錯誤 ,使用者輸入不在評分內(提示使用者輸入錯誤請重)");
+		}
+
 	}
-   
+	else //角色不存在輸出
+	{
+	 printf("輸入不存在名字 或錯誤的數字");
+	}
+
     if( score<=10 && score>=1)
 	{
 	 printf("輸入記憶體的分數:%2d",ptr->Star);
-	} 
-	
+	}
+
 	fprint=roomerHead;
-	
+
 	fprintf(roomerFile,"Name	UserNumber	Star	Gender	SleepTime	School				Nationality	Habit		Disease\n");
 	while(fprint!=NULL)
 	{
 	 fprintf(roomerFile,"%-15s %-2d %-2d %-10s %2d:00 %-40s %-20s %-20s %-20s\n",
 			fprint->RoomerName, fprint->UserNumber, fprint->Star,
 			fprint->Gender, fprint->SleepTime, fprint->School,
-			fprint->Nationality, fprint->Habit, fprint->Disease);	
-		fprint=fprint->next;	
+			fprint->Nationality, fprint->Habit, fprint->Disease);
+		fprint=fprint->next;
 	}
-	fclose(roomerFile);	
+	fclose(roomerFile);
 }
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
