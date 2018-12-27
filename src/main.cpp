@@ -1076,17 +1076,20 @@ void roomerGetScore(roomer*roomerHead)
 	 printf("輸入記憶體的分數:%2d",ptr->Star);
 	}
 
+        FILE *roomerFile1;
+	roomerFile1 = fopen("RoomerDatabase.txt","w");
 	fprint=roomerHead;
-
-	fprintf(roomerFile,"Name	UserNumber	Star	Gender	SleepTime	School				Nationality	Habit		Disease\n");
-	while(fprint!=NULL)
-	{
-	 fprintf(roomerFile,"%-15s %-2d %-2d %-10s %2d:00 %-40s %-20s %-20s %-20s\n",
+	
+	   fprintf(roomerFile1,"Name    UserNumber	Star	Gender	SleepTime	School				Nationality	Habit		Disease\n");
+	   while(fprint!=NULL)
+	  {
+	     fprintf(roomerFile1,"%-15s %-2d %-2d %-20s %-2d %-40s %-20s %-20s %-20s\n",
 			fprint->RoomerName, fprint->UserNumber, fprint->Star,
 			fprint->Gender, fprint->SleepTime, fprint->School,
-			fprint->Nationality, fprint->Habit, fprint->Disease);
-		fprint=fprint->next;
-	}
+			fprint->Nationality, fprint->Habit, fprint->Disease);	
+		 fprint=fprint->next;	
+	  }
+    
 	fclose(roomerFile);
 }
 ///////////////////////////////////////////////
