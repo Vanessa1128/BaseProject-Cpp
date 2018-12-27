@@ -61,6 +61,18 @@ int main (void){
         printf("請輸入帳號:%s\n",acc);
         printf("請輸入密碼:");
         scanf(" %s",pas);
+        bool validate;
+        validate = login(acc,pas);
+        if(validate == true){
+            system("CLS");
+            printf("\n\t==已登入!!==\n");
+        }
+
+        if(validate == false){
+            system("CLS");
+            printf("\n\t==登入失敗!!==\n");
+        }
+
 	}
 	else if(option == 2){//新建帳號
 
@@ -91,7 +103,7 @@ void show_menu() {
 
 ///登入驗證///		*true = 登入成功 *false = 登入失敗
 bool login(string acc,string pas) {
-
+    return true;
 }
 
 ///創建帳號///		*true = 創建成功 *false = 創建失敗
