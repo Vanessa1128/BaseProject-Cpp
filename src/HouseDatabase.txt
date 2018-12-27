@@ -4,4 +4,9 @@ Joe		1	35	2500	500		No.167,_Xi'an_St.		3		Provide,60M	Suite		Yes	Wardrobe,BedBoa
 Joe		2	50.9	23000	1000		No.427,_Fuxing_Rd.		4		Provide,100M	Suite		No	Wardrobe,WashingMachine,WaterFountain,Balcony
 Henry		0	20.5	5600	700		No.98,_Fengda_Rd.		2		Not_Provide	Suite		No	Wardrobe,Table,Chair,Bookcase
 Henry		1	66	35000	1200		No.207-18,_Sec.2,_Qinghai_Rd.	7		Provide,100M	Suite		Yes	Wardrobe,AirFan,BedPackage,Sofa,Tables,Chairs
-Henry		2	25.0	8200	1000		No.99,_Sec.3,_Taiwan_Boulevard	2		100M,Provide	Suite		No	WaterFountain,Wardrobe,Table,Chair,Bookcase,Balcony
+Henry		2	25.0	8200	1000		No.99,_Sec.3,_Taiwan_Boulevard	2		Provide,20M	Suite		No	WaterFountain,Wardrobe,Table,Chair,Bookcase,Balcony
+Janet		0	23.3	6666	878.7		No.18,_Fuxing_North_Rd.		4		Provide,100M	Share_Room	No	WashingMachine,ShareWaterFountain,Tables,Chairs
+Janet		1	66.6	23333	666		No.127,_Fengda_Rd.		7		Provide,100M	Suite		No	Wardrobe,AirFan,BedPackage,Sofa,Tables,Chairs
+Cindy		0	70	39999	2001		No.40,_Sec.3,_Xitun_Rd.		8		Provide,100M	Suite		Yes	Balcony,AirFan,BedPackage,Sofa,Bookcase,Wardrobe
+Winnie		0	13.5	3666	500		No.256,_Sec.2,_Henan_Rd.	1		Provide,60M	Share_Room	No	Wardrobe,Table,Chair,Bookcase,Balcony
+Winnie		1	19.9	4666	750		No.105-10,_Wenhua_Rd.		2		Not_Provide	Suite		No	BedPackage,Sofa,Tables,Chairs,Wardrobe
