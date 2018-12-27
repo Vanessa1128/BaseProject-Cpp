@@ -1,9 +1,17 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<iostream>
+#include <string>
+
+using namespace std;
+
 ///副程式宣告區
 //////////////////////////////////////////////
-void show_menu();
+void show_menu();///顯示功能選單
+bool login(string acc,string pas);///登入驗證
+bool create_account(string acc,string pas);///創建帳號
+void mutator(string pas);///更改密碼
+int get_user_number(string acc,string pas);///取得使用者編號
 //////////////////////////////////////////////
 ///結構宣告
 //////////////////////////////////////////////
@@ -42,13 +50,13 @@ int main (void){
 	}
 
 
-	if(option == 1){
+	if(option == 1){//登入驗證
 
 	}
-	else if(option == 2){
+	else if(option == 2){//新建帳號
 
 	}
-	else if(option == 3){
+	else if(option == 3){//修改密碼
 
 	}
 	else if(option == 4){//離開
@@ -57,13 +65,6 @@ int main (void){
         printf("\n\t==按下任意鍵離開本系統==\n");
         return 0;
 	}
-
-	//switch寫法 對應各功能
-	//1.login
-	//2.create account
-	//3.quit
-	//4.改密碼
-
 
 }
 
@@ -80,19 +81,23 @@ void show_menu() {
 }
 
 ///登入驗證///		*true = 登入成功 *false = 登入失敗
-bool login(/*帳號密碼*/) {
+bool login(string acc,string pas) {
 
 }
 
 ///創建帳號///		*true = 創建成功 *false = 創建失敗
-bool create_account(/*帳號資訊*/) {
+bool create_account(string acc,string pas) {
 
 }
 
 ///更改密碼
-void mutator(/*欲更改的職*/) {
+void mutator(string pas) {
 
 }
 
 //註記 與資料庫連動的user number取得副程式還須新增 <<二擇一>> 1.登入驗證回傳值為int = user number  2.多寫一個get user number的副程式
 
+///取得使用者編號
+int get_user_number(string acc,string pas){
+
+}
