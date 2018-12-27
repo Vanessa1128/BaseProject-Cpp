@@ -1,5 +1,5 @@
-Name	UserNumber	Star	Gender	SleepTime	School				Nationality	Habit		Disease
-Soung	0		8	Female	2		National_Chung_Hsing_Univ.	Malaysia	No		No
-Jack	1		6	Male	23		Feng_Chia_Univ.			Taiwan		Snore		No
-Vincent	2		7	Male	22		Feng_Chia_Univ.			Taiwan		GrindTeeth	No
-Judy	3		5	Female	24		Overseas_Chinese_Univ.		Taiwan		No		No
+Name    UserNumber	Star	Gender	SleepTime	School				Nationality	Habit		Disease
+Soung           0  8  Female               2  National_Chung_Hsing_Univ.               Malaysia             No                   No                  
+Jack            1  8  Male                 23 Feng_Chia_Univ.                          Taiwan               Snore                No                  
+Vincent         2  7  Male                 22 Feng_Chia_Univ.                          Taiwan               GrindTeeth           No                  
+Judy            3  5  Female               24 Overseas_Chinese_Univ.                   Taiwan               No                   No                  
