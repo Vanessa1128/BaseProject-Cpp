@@ -51,7 +51,16 @@ int main (void){
 
 
 	if(option == 1){//登入驗證
-
+	    system("CLS");
+	    printf("==歡迎來到登入頁面==\n");
+        printf("請輸入帳號:");
+        string acc,pas;
+        scanf(" %s",acc);
+        system("CLS");
+        printf("==歡迎來到登入頁面==\n");
+        printf("請輸入帳號:%s\n",acc);
+        printf("請輸入密碼:");
+        scanf(" %s",pas);
 	}
 	else if(option == 2){//新建帳號
 
@@ -76,7 +85,7 @@ int main (void){
 void show_menu() {
     printf("<<歡迎使用找室友系統>>\n");
     printf("按下數字鍵選擇服務\n");
-    printf("1.登入  2.新建帳號 3.修改密碼 4.離開系統\n");
+    printf("1.登入\t\t2.新增帳號\n3.修改密碼\t4.離開系統\n");
     printf("請輸入服務選項:");
 }
 
