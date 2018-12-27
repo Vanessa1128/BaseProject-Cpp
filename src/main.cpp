@@ -1018,15 +1018,18 @@ void landlordGetScore(landlord *landlordHead)//房東的評分
 	if( score<=10 && score>=1)
 	{ printf("輸入記憶體的分數:%2d",ptr->Star); } //輸出評分的分數
 }
-void roomerGetScore(roomer*roomerHead)//室友的評分
+void roomerGetScore(roomer*roomerHead)
 {
+	FILE *roomerFile;
+	roomerFile = fopen("RoomerDatabase.txt","w");
+	
 	char name[20];
 	int i=0, index=-1, score=0;//引索值控制角色 
-	roomer*ptr;
-	
+	roomer*ptr,*fprint;
+		
 	ptr=roomerHead;//ptr控制指標的位址 
 	
-	printf("--進入室友評分系統--\n");
+	printf("--進入室友評分系統---\n");
 	printf("請輸入需要評分的對象:\n");
 	scanf("%s",name);
 	
@@ -1067,8 +1070,22 @@ void roomerGetScore(roomer*roomerHead)//室友的評分
 	}
    
     if( score<=10 && score>=1)
-	{printf("輸入記憶體的分數:%2d",ptr->Star);} //輸出評分的分數
-		
+	{
+	 printf("輸入記憶體的分數:%2d",ptr->Star);
+	} 
+	
+	fprint=roomerHead;
+	
+	fprintf(roomerFile,"Name	UserNumber	Star	Gender	SleepTime	School				Nationality	Habit		Disease\n");
+	while(fprint!=NULL)
+	{
+	 fprintf(roomerFile,"%-15s %-2d %-2d %-10s %2d:00 %-40s %-20s %-20s %-20s\n",
+			fprint->RoomerName, fprint->UserNumber, fprint->Star,
+			fprint->Gender, fprint->SleepTime, fprint->School,
+			fprint->Nationality, fprint->Habit, fprint->Disease);	
+		fprint=fprint->next;	
+	}
+	fclose(roomerFile);	
 }
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
