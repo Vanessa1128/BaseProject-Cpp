@@ -174,6 +174,9 @@ int main() {
         return 0;
 	}
 	return 0;
+	//test評分系統
+	landlordGetScore(landlordBuild());
+	roomerGetScore(roomerBuild());
 }
 
 ///////////////////////////////////////////////
@@ -1167,10 +1170,10 @@ void roomerGetScore(roomer*roomerHead)
 	   roomerFile = fopen("RoomerDatabase.txt","w");//開啟檔案 
 	   fprint=roomerHead;
 	
-	   fprintf(roomerFile,"%-15s%-14s%-8s%-10s%-15s%-40s%-20s%-20s%-20s\n","Name","UserNumber","Star","Gender","SleepTime","School","Nationality","Habit","Disease");
+	   fprintf(roomerFile,"%-15s %-14s %-8s %-10s %-15s %-40s %-20s %-20s %-20s\n","Name","UserNumber","Star","Gender","SleepTime","School","Nationality","Habit","Disease");
 	   while(fprint!=NULL)//將評分完的檔案輸入資料庫 
 	  {
-	     fprintf(roomerFile,"%-15s%-14d%-8d%-10s%-15d%-40s%-20s%-20s%-20s\n",
+	     fprintf(roomerFile,"%-15s %-14d %-8d %-10s %-15d %-40s %-20s %-20s %-20s\n",
 			     fprint->RoomerName, fprint->UserNumber, fprint->Star,
 			     fprint->Gender, fprint->SleepTime, fprint->School,
 			     fprint->Nationality, fprint->Habit, fprint->Disease);	
