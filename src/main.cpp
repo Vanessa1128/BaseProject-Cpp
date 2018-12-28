@@ -1292,8 +1292,7 @@ bool create_account(char acc[],char pas[],char type) {
         system("pause");
         return false;
     }
-    int number = 0;
-
+    int num =0;
     Account *head_acc = NULL, *current_acc = NULL;
 	Title title;
 	fscanf(acc_open," %s %s %s %s",title.num,title.type,title.acc,title.pas );
@@ -1301,17 +1300,18 @@ bool create_account(char acc[],char pas[],char type) {
     head_acc = acc_node();
     head_acc->previous = head_acc;
 	current_acc = head_acc;
+
 	while (fscanf(acc_open,"%d %c %s %s",&current_acc->num, &current_acc->type, current_acc->account,current_acc->password) != EOF) {
-		number = number +1;
 		current_acc->next = acc_node();
-		current_acc->previous = current_acc;
 		current_acc = current_acc->next;
 
-
 	}
+    current_acc->next = acc_node();
+    num = current_acc->num + 1;
 
 
-    fprintf(acc_open,"%d\t%c\t%s\t%s\n",number,type,acc,pas);
+
+    fprintf(acc_open,"\n%d\t%c\t%s\t%s",num,type,acc,pas);
     fclose(acc_open);
     return true;
 }
