@@ -158,13 +158,16 @@ int main (void){
             system("pause");
             system("CLS");
 	    printf("--進入選項評分系統--\t\n");
-	    printf("選擇選項評分 1.室友評分選項2.房東評分選項\t\n");
+	    printf("選擇選項評分 1.室友評分選項2.房東評分選項3.選房子系統4.選室友系統\t\n");
 	    scanf("%d",&selcet);
 	    if(selcet==1)
-	    {roomerGetScore(roomerBuild());}
+            roomerGetScore(roomerBuild());
 	    if(selcet==2)
-	    {landlordGetScore(landlordBuild());}	
-
+            landlordGetScore(landlordBuild());
+	    if(selcet==3)
+            findHouse();
+	    if(selcet==4)
+            findRoomer();
         }
 
         if(validate == false){
