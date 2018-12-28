@@ -5,24 +5,24 @@
 #include <string>
 
 using namespace std;
-///ç™»å…¥ç³»çµ±å‰¯ç¨‹å¼å®£å‘Šå€
+///µn¤J¨t²Î°Æµ{¦¡«Å§i°Ï
 //////////////////////////////////////////////
-void show_menu();///é¡¯ç¤ºåŠŸèƒ½é¸å–®
-bool login(string acc,string pas);///ç™»å…¥é©—è­‰
-bool create_account(string acc,string pas);///å‰µå»ºå¸³è™Ÿ
-void mutator(string pas);///æ›´æ”¹å¯†ç¢¼
-int get_user_number(string acc,string pas);///å–å¾—ä½¿ç”¨è€…ç·¨è™Ÿ
+void show_menu();///Åã¥Ü¥\¯à¿ï³æ
+bool login(string acc,string pas);///µn¤JÅçÃÒ
+bool create_account(string acc,string pas);///³Ğ«Ø±b¸¹
+void mutator(string pas);///§ó§ï±K½X
+int get_user_number(string acc,string pas);///¨ú±o¨Ï¥ÎªÌ½s¸¹
 //////////////////////////////////////////////
 
 //////////////////////////////////////////////
-///ç™»å…¥ç³»çµ±çµæ§‹å®£å‘Š
+///µn¤J¨t²Îµ²ºc«Å§i
 //////////////////////////////////////////////
 typedef struct {
 	char num[8]; char type[8]; char acc[8];
 	char pas[8];
-} account_database_title;//æ¥æ”¶å¸³æˆ¶è³‡æ–™åº«çš„ç¬¬ä¸€è¡Œ
+} account_database_title;//±µ¦¬±b¤á¸ê®Æ®wªº²Ä¤@¦æ
 
-typedef struct account{//å¸³è™Ÿçµæ§‹
+typedef struct account{//±b¸¹µ²ºc
 	int num[8];
 	char type;
 	char account[20];
@@ -34,10 +34,10 @@ typedef struct account{//å¸³è™Ÿçµæ§‹
 
 
 ///////////////////////////////////////////////
-///		    junkã€æˆ¿æ±ã€æˆ¿å­ã€æˆ¿å®¢çµæ§‹çš„å®£å‘Š		  	 ///
+///		    junk¡B©ĞªF¡B©Ğ¤l¡B©Ğ«Èµ²ºcªº«Å§i		  	 ///
 /*
-æé†’ï¼šé€™è£¡å»ºæ§‹çš„éˆçµä¸²åˆ— Lindked List æ˜¯é›™å‘ä¸å¾ªç’°çš„
-æ¯”å¦‚ï¼š a <-> b <-> c <-> d ï¼Œä½†aã€dæœªä¸²è¯ï¼Œa->prev æ˜¯ a è‡ªå·±ï¼Œd->next æ˜¯ NULL
+´£¿ô¡G³o¸Ì«ØºcªºÃìµ²¦ê¦C Lindked List ¬OÂù¦V¤£´`Àôªº
+¤ñ¦p¡G a <-> b <-> c <-> d ¡A¦ıa¡Bd¥¼¦êÁp¡Aa->prev ¬O a ¦Û¤v¡Ad->next ¬O NULL
 */
 typedef struct {
 	char junk1[30]; char junk2[30]; char junk3[30];
@@ -91,44 +91,44 @@ typedef struct roomerStruct {
 
 
 ///////////////////////////////////////////////
-///		    *è¨˜å¾—* åœ¨é€™è£¡æå‰å®£å‘Šä¸€ä¸‹ å‰¯ç¨‹å¼		  	 ///
+///		    *°O±o* ¦b³o¸Ì´£«e«Å§i¤@¤U °Æµ{¦¡		  	 ///
 
-// å…±ç”¨å‰¯ç¨‹å¼
-landlord* landlordBuild(); // æˆ¿æ±è³‡æ–™åº«å°å…¥
-house* houseBuild(); // æˆ¿å­è³‡æ–™åº«å°å…¥
-roomer* roomerBuild(); // æˆ¿å®¢è³‡æ–™åº«å°å…¥
+// ¦@¥Î°Æµ{¦¡
+landlord* landlordBuild(); // ©ĞªF¸ê®Æ®w¾É¤J
+house* houseBuild(); // ©Ğ¤l¸ê®Æ®w¾É¤J
+roomer* roomerBuild(); // ©Ğ«È¸ê®Æ®w¾É¤J
 
-// æ‰¾æˆ¿å­ç³»çµ±å‰¯ç¨‹å¼
-void findHouse(); // æ‰¾æˆ¿å­ç³»çµ±é€²å…¥é»
-house* generate_hou(); // ç”¢ç”Ÿæˆ¿å­ç¯€é»(node)
-landlord* generate_lan(); // ç”¢ç”Ÿæˆ¿æ±ç¯€é»(node)
-int printHouse(house*, landlord*); // å°å‡ºæˆ¿å­ä¸²åˆ—ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š
-int houseFilter(house*, landlord*); // è¼¸å…¥æ¢ä»¶ & ç¯©é¸æˆ¿å­
+// §ä©Ğ¤l¨t²Î°Æµ{¦¡
+void findHouse(); // §ä©Ğ¤l¨t²Î¶i¤JÂI
+house* generate_hou(); // ²£¥Í©Ğ¤l¸`ÂI(node)
+landlord* generate_lan(); // ²£¥Í©ĞªF¸`ÂI(node)
+int printHouse(house*, landlord*); // ¦L¥X©Ğ¤l¦ê¦C¡B¿ï¾Ü¬d¬İ¸ê°T
+int houseFilter(house*, landlord*); // ¿é¤J±ø¥ó & ¿z¿ï©Ğ¤l
 
-//æ‰¾å®¤å‹ç³»çµ±å‰¯ç¨‹å¼
-void findRoomer(); // æ‰¾å®¤å‹ç³»çµ±é€²å…¥é»
-roomer* generate_roo(); // ç”¢ç”Ÿå®¤å‹ç¯€é»(node)
-int printRoomer(roomer*); // å°å‡ºå®¤å‹ä¸²åˆ—ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š
-int roomerFilter(roomer*); // è¼¸å…¥æ¢ä»¶ & ç¯©é¸å®¤å‹
+//§ä«Ç¤Í¨t²Î°Æµ{¦¡
+void findRoomer(); // §ä«Ç¤Í¨t²Î¶i¤JÂI
+roomer* generate_roo(); // ²£¥Í«Ç¤Í¸`ÂI(node)
+int printRoomer(roomer*); // ¦L¥X«Ç¤Í¦ê¦C¡B¿ï¾Ü¬d¬İ¸ê°T
+int roomerFilter(roomer*); // ¿é¤J±ø¥ó & ¿z¿ï«Ç¤Í
 
-//å®¤å‹è©•åˆ†çš„ç³»çµ±,æˆ¿æ±è©•åˆ†çš„ç³»çµ±
+//«Ç¤Íµû¤Àªº¨t²Î,©ĞªFµû¤Àªº¨t²Î
 void landlordGetScore(landlord*);
 void roomerGetScore(roomer*);
 
 ///////////////////////////////////////////////
 
 int main() {
-	int option = 0; //åŠŸèƒ½é¸é …
+	int option = 0; //¥\¯à¿ï¶µ
 
-	show_menu();//showé¸å–®
-	for(;;){//ç„¡é™è¿´åœˆç›´åˆ°è¼¸å…¥æ­£ç¢ºæŒ‡ä»¤
+	show_menu();//show¿ï³æ
+	for(;;){//µL­­°j°éª½¨ì¿é¤J¥¿½T«ü¥O
 
-		if(scanf(" %d", & option) ==1 && option <=4 && option >= 1){//ç•¶è¼¸å…¥ç‚ºæ•´æ•¸ä¸”ç‚ºåŠŸèƒ½é¸é …æ™‚è·³å‡º
+		if(scanf(" %d", & option) ==1 && option <=4 && option >= 1){//·í¿é¤J¬°¾ã¼Æ¥B¬°¥\¯à¿ï¶µ®É¸õ¥X
             break;
 		}
 
-		else{//ä¾‹å¤– é¡¯ç¤ºéŒ¯èª¤è¨Šæ¯ é‡æ–°é¡¯ç¤ºé¸å–® ä¸¦æ¸…ç©ºè¼¸å…¥ç·©è¡
-            printf("ç„¡æ•ˆçš„æŒ‡ä»¤!!");
+		else{//¨Ò¥~ Åã¥Ü¿ù»~°T®§ ­«·sÅã¥Ü¿ï³æ ¨Ã²MªÅ¿é¤J½w½Ä
+            printf("µL®Äªº«ü¥O!!");
             system("pause");
             system("CLS");
             show_menu();
@@ -137,49 +137,52 @@ int main() {
 	}
 
 
-	if(option == 1){//ç™»å…¥é©—è­‰
+	if(option == 1){//µn¤JÅçÃÒ
 	    system("CLS");
-	    printf("==æ­¡è¿ä¾†åˆ°ç™»å…¥é é¢==\n");
-        printf("è«‹è¼¸å…¥å¸³è™Ÿ:");
+	    printf("==Åwªï¨Ó¨ìµn¤J­¶­±==\n");
+        printf("½Ğ¿é¤J±b¸¹:");
         string acc,pas;
         scanf(" %s",acc);
         system("CLS");
-        printf("==æ­¡è¿ä¾†åˆ°ç™»å…¥é é¢==\n");
-        printf("è«‹è¼¸å…¥å¸³è™Ÿ:%s\n",acc);
-        printf("è«‹è¼¸å…¥å¯†ç¢¼:");
+        printf("==Åwªï¨Ó¨ìµn¤J­¶­±==\n");
+        printf("½Ğ¿é¤J±b¸¹:%s\n",acc);
+        printf("½Ğ¿é¤J±K½X:");
         scanf(" %s",pas);
         bool validate;
         validate = login(acc,pas);
         if(validate == true){
             system("CLS");
-            printf("\n\t==å·²ç™»å…¥!!==\n");
+            printf("\n\t==¤wµn¤J!!==\n\n");
+            system("pause");
+            system("CLS");
+            findHouse();
         }
 
         if(validate == false){
             system("CLS");
-            printf("\n\t==ç™»å…¥å¤±æ•—!!==\n");
+            printf("\n\t==µn¤J¥¢±Ñ!!==\n");
         }
 
 	}
-	else if(option == 2){//æ–°å»ºå¸³è™Ÿ
+	else if(option == 2){//·s«Ø±b¸¹
 
 	}
-	else if(option == 3){//ä¿®æ”¹å¯†ç¢¼
+	else if(option == 3){//­×§ï±K½X
 
 	}
-	else if(option == 4){//é›¢é–‹
+	else if(option == 4){//Â÷¶}
         system("CLS");
-        printf("\n\t<<~æ„Ÿè¬æ‚¨ä½¿ç”¨æœ¬ç³»çµ±~>>\n");
-        printf("\n\t==æŒ‰ä¸‹ä»»æ„éµé›¢é–‹æœ¬ç³»çµ±==\n");
+        printf("\n\t<<~·PÁÂ±z¨Ï¥Î¥»¨t²Î~>>\n");
+        printf("\n\t==«ö¤U¥ô·NÁäÂ÷¶}¥»¨t²Î==\n");
         return 0;
 	}
 	return 0;
-	//testè©•åˆ†ç³»çµ±æ¸¬è©¦å®Œç•¢
+	//testµû¤À¨t²Î´ú¸Õ§¹²¦
 }
 
 ///////////////////////////////////////////////
-/// å…±ç”¨ å‰¯ç¨‹å¼ï¼š		    ç”¢ç”Ÿæˆ¿å­ç¯€é»(node)		  	 ///
-/// å·²åˆ©ç”¨å‰¯ç¨‹å¼ï¼šæ‰¾æˆ¿å­ç³»çµ±
+/// ¦@¥Î °Æµ{¦¡¡G		    ²£¥Í©Ğ¤l¸`ÂI(node)		  	 ///
+/// ¤w§Q¥Î°Æµ{¦¡¡G§ä©Ğ¤l¨t²Î
 house* generate_hou() {
 	house *item = NULL;
 	item = (house*)malloc(sizeof(house));
@@ -191,8 +194,8 @@ house* generate_hou() {
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// å…±ç”¨ å‰¯ç¨‹å¼ï¼š		    ç”¢ç”Ÿæˆ¿æ±ç¯€é»(node)		  	 ///
-/// å·²åˆ©ç”¨å‰¯ç¨‹å¼ï¼šæ‰¾æˆ¿å­ç³»çµ±
+/// ¦@¥Î °Æµ{¦¡¡G		    ²£¥Í©ĞªF¸`ÂI(node)		  	 ///
+/// ¤w§Q¥Î°Æµ{¦¡¡G§ä©Ğ¤l¨t²Î
 landlord* generate_lan() {
 	landlord *item = NULL;
 	item = (landlord*)malloc(sizeof(landlord));
@@ -204,8 +207,8 @@ landlord* generate_lan() {
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// å…±ç”¨ å‰¯ç¨‹å¼ï¼š		    ç”¢ç”Ÿå®¤å‹ç¯€é»(node)		  	 ///
-/// å·²åˆ©ç”¨å‰¯ç¨‹å¼ï¼šæ‰¾å®¤å‹ç³»çµ±
+/// ¦@¥Î °Æµ{¦¡¡G		    ²£¥Í«Ç¤Í¸`ÂI(node)		  	 ///
+/// ¤w§Q¥Î°Æµ{¦¡¡G§ä«Ç¤Í¨t²Î
 roomer* generate_roo() {
 	roomer *item = NULL;
 	item = (roomer*)malloc(sizeof(roomer));
@@ -217,8 +220,8 @@ roomer* generate_roo() {
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// å…±ç”¨ å‰¯ç¨‹å¼ï¼š		    LandlordDatabase.txtæª”æ¡ˆ æˆ¿æ±è³‡æ–™åº«å°å…¥		  	 ///
-/// å·²åˆ©ç”¨å‰¯ç¨‹å¼ï¼šæ‰¾æˆ¿å­ç³»çµ±
+/// ¦@¥Î °Æµ{¦¡¡G		    LandlordDatabase.txtÀÉ®× ©ĞªF¸ê®Æ®w¾É¤J		  	 ///
+/// ¤w§Q¥Î°Æµ{¦¡¡G§ä©Ğ¤l¨t²Î
 
 landlord* landlordBuild() {
 
@@ -227,7 +230,7 @@ landlord* landlordBuild() {
 	if (landlordFile == NULL) { printf("Fail to open file!\n"); exit(EXIT_FAILURE); }
 	landlord *head_lan = NULL, *current_lan = NULL, *temp1;
 
-	// æ¨™é¡Œæ¬„ä½è™•ç† structure
+	// ¼ĞÃDÄæ¦ì³B²z structure
 	Junk junk;
 	fscanf(landlordFile, "%s %s %s %s %s %s", junk.junk1, junk.junk2, junk.junk3, junk.junk4, junk.junk5, junk.junk6);
 
@@ -241,31 +244,31 @@ landlord* landlordBuild() {
 		current_lan->next->prev = current_lan;
 		current_lan = current_lan->next;
 	}
-	// åˆªé™¤æœ€å¾Œä¸€å€‹å¤šé¤˜ node
+	// §R°£³Ì«á¤@­Ó¦h¾l node
 	current_lan = current_lan->prev;
 	temp1 = current_lan->next;
 	current_lan->next = NULL;
 	free(temp1);
 
-	// æ¸¬è©¦å°å‡º landlord link list
+	// ´ú¸Õ¦L¥X landlord link list
 	current_lan = head_lan;
-	printf("\næ¸¬è©¦å°å‡ºï¼š\n");
+	printf("\n´ú¸Õ¦L¥X¡G\n");
 	while (current_lan != NULL) {
 		printf("%-15s %-2d %-2d %-2d %-30s %-30s\n", current_lan->LandlordName, current_lan->UserNumber, current_lan->Star, current_lan->NumberOfHouse, current_lan->Contact1, current_lan->Contact2);
 		current_lan = current_lan->next;
-	} printf("\nä»¥ä¸Šæ¸¬è©¦å°å‡º\n");
+	} printf("\n¥H¤W´ú¸Õ¦L¥X\n");
 
-	// é—œæ–‡ä»¶
+	// Ãö¤å¥ó
 	fclose(landlordFile);
 
-	/* å›å‚³å·²å»ºç«‹å¥½çš„ head ç¯€é» */
+	/* ¦^¶Ç¤w«Ø¥ß¦nªº head ¸`ÂI */
 	return head_lan;
 }
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// å…±ç”¨ å‰¯ç¨‹å¼ï¼š		    HouseDatabase.txtæª”æ¡ˆ æˆ¿å­è³‡æ–™åº«å°å…¥		  	 ///
-/// å·²åˆ©ç”¨å‰¯ç¨‹å¼ï¼šæ‰¾æˆ¿å­ç³»çµ±
+/// ¦@¥Î °Æµ{¦¡¡G		    HouseDatabase.txtÀÉ®× ©Ğ¤l¸ê®Æ®w¾É¤J		  	 ///
+/// ¤w§Q¥Î°Æµ{¦¡¡G§ä©Ğ¤l¨t²Î
 
 house* houseBuild() {
 
@@ -274,7 +277,7 @@ house* houseBuild() {
 	if (houseFile == NULL) { printf("Fail to open file!\n"); exit(EXIT_FAILURE); }
 	house *head_hou = NULL, *current_hou = NULL, *temp;
 
-	// æ¨™é¡Œæ¬„ä½è™•ç† structure
+	// ¼ĞÃDÄæ¦ì³B²z structure
 	Junk junk;
 	fscanf(houseFile, "%s %s %s %s %s %s %s %s %s %s %s", junk.junk1, junk.junk2, junk.junk3,
 		junk.junk4, junk.junk5, junk.junk6, junk.junk7, junk.junk8, junk.junk9, junk.junk10, junk.junk11);
@@ -292,15 +295,15 @@ house* houseBuild() {
 		current_hou->next->prev = current_hou;
 		current_hou = current_hou->next;
 	}
-	// åˆªé™¤æœ€å¾Œä¸€å€‹å¤šé¤˜ node
+	// §R°£³Ì«á¤@­Ó¦h¾l node
 	current_hou = current_hou->prev;
 	temp = current_hou->next;
 	current_hou->next = NULL;
 	free(temp);
 
-	// æ¸¬è©¦å°å‡º house link list
+	// ´ú¸Õ¦L¥X house link list
 	current_hou = head_hou;
-	printf("\næ¸¬è©¦å°å‡ºï¼š\n");
+	printf("\n´ú¸Õ¦L¥X¡G\n");
 	while (current_hou != NULL) {
 		printf("%-5s %2d %-7g %-7g %-7g %-30s %-2d %-13s %-10s %-5s %-100s\n",
 			current_hou->LandlordName, current_hou->Number, current_hou->Area,
@@ -308,21 +311,21 @@ house* houseBuild() {
 			current_hou->PeopleNumber, current_hou->Network, current_hou->RoomType,
 			current_hou->Pet, current_hou->Facilities);
 		current_hou = current_hou->next;
-	} printf("\nä»¥ä¸Šæ¸¬è©¦å°å‡º\n");
+	} printf("\n¥H¤W´ú¸Õ¦L¥X\n");
 
-	// é—œæ–‡ä»¶
+	// Ãö¤å¥ó
 	fclose(houseFile);
 
-	/* å›å‚³å·²å»ºç«‹å¥½çš„ head ç¯€é» */
+	/* ¦^¶Ç¤w«Ø¥ß¦nªº head ¸`ÂI */
 	return head_hou;
 }
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// å…±ç”¨ å‰¯ç¨‹å¼ï¼š		    RoomerDatabase.txtæª”æ¡ˆ æˆ¿å®¢è³‡æ–™åº«å°å…¥		  	 ///
-/// å·²åˆ©ç”¨å‰¯ç¨‹å¼ï¼šæ‰¾å®¤å‹ç³»çµ±
+/// ¦@¥Î °Æµ{¦¡¡G		    RoomerDatabase.txtÀÉ®× ©Ğ«È¸ê®Æ®w¾É¤J		  	 ///
+/// ¤w§Q¥Î°Æµ{¦¡¡G§ä«Ç¤Í¨t²Î
 
-roomer* roomerBuild() { /* roomer è³‡æ–™åº«å°å‡ºåˆ° Linked List */
+roomer* roomerBuild() { /* roomer ¸ê®Æ®w¾É¥X¨ì Linked List */
 
 	FILE *roomerFile;
 	roomerFile = fopen("RoomerDatabase.txt", "r");
@@ -330,7 +333,7 @@ roomer* roomerBuild() { /* roomer è³‡æ–™åº«å°å‡ºåˆ° Linked List */
 
 	roomer *head_roo = NULL, *current_roo = NULL, *temp1;
 
-	// æ¨™é¡Œæ¬„ä½è™•ç† structure
+	// ¼ĞÃDÄæ¦ì³B²z structure
 	Junk junk;
 	fscanf(roomerFile, "%s %s %s %s %s %s %s %s %s", junk.junk1, junk.junk2, junk.junk3, junk.junk4, junk.junk5, junk.junk6, junk.junk7, junk.junk8, junk.junk9);
 
@@ -346,63 +349,63 @@ roomer* roomerBuild() { /* roomer è³‡æ–™åº«å°å‡ºåˆ° Linked List */
 		current_roo->next->prev = current_roo;
 		current_roo = current_roo->next;
 	}
-	// åˆªé™¤æœ€å¾Œä¸€å€‹å¤šé¤˜ node
+	// §R°£³Ì«á¤@­Ó¦h¾l node
 	current_roo = current_roo->prev;
 	temp1 = current_roo->next;
 	current_roo->next = NULL;
 	free(temp1);
 
-	// æ¸¬è©¦å°å‡º landlord link list
+	// ´ú¸Õ¦L¥X landlord link list
 	current_roo = head_roo;
-	printf("\næ¸¬è©¦å°å‡ºï¼š\n");
+	printf("\n´ú¸Õ¦L¥X¡G\n");
 	while (current_roo != NULL) {
 		printf("%-15s %-2d %-2d %-10s %2d:00 %-40s %-20s %-20s %-20s\n",
 			current_roo->RoomerName, current_roo->UserNumber, current_roo->Star,
 			current_roo->Gender, current_roo->SleepTime, current_roo->School,
 			current_roo->Nationality, current_roo->Habit, current_roo->Disease);
 		current_roo = current_roo->next;
-	} printf("\nä»¥ä¸Šæ¸¬è©¦å°å‡º\n");
+	} printf("\n¥H¤W´ú¸Õ¦L¥X\n");
 
-	// é—œæ–‡ä»¶
+	// Ãö¤å¥ó
 	fclose(roomerFile);
 
-	/* å›å‚³å·²å»ºç«‹å¥½çš„ head ç¯€é» */
+	/* ¦^¶Ç¤w«Ø¥ß¦nªº head ¸`ÂI */
 	return head_roo;
 }
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// æ‰¾æˆ¿å­ç³»çµ± ä¸»ç¨‹å¼ï¼š		    æ‰¾æˆ¿å­ç³»çµ±é€²å…¥é»		  	 ///
+/// §ä©Ğ¤l¨t²Î ¥Dµ{¦¡¡G		    §ä©Ğ¤l¨t²Î¶i¤JÂI		  	 ///
 void findHouse() {
 	house* head_hou = NULL;
 	landlord* head_lan = NULL;
 
-	/* é€²è¡Œç¯©é¸ & å›å‚³ç‹€æ…‹ */
-	// ç‹€æ…‹ 0ï¼šæˆåŠŸ&é€€å‡ºç¨‹å¼
-	// ç‹€æ…‹ 2ï¼šæˆåŠŸ&é‡æ–°ç¯©é¸
+	/* ¶i¦æ¿z¿ï & ¦^¶Çª¬ºA */
+	// ª¬ºA 0¡G¦¨¥\&°h¥Xµ{¦¡
+	// ª¬ºA 2¡G¦¨¥\&­«·s¿z¿ï
 	int state = 2;
 	while (state == 2) {
-		head_hou = houseBuild(); // å»ºç«‹ house linked list
-		head_lan = landlordBuild(); // å»ºç«‹ landlord linked list
+		head_hou = houseBuild(); // «Ø¥ß house linked list
+		head_lan = landlordBuild(); // «Ø¥ß landlord linked list
 		state = houseFilter(head_hou, head_lan);
 	}
 
-	printf("||> é€€å‡ºæ‰¾æˆ¿å­ç³»çµ±ï¼\n");
+	printf("||> °h¥X§ä©Ğ¤l¨t²Î¡I\n");
 	return;
 }
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// æ‰¾æˆ¿å­ç³»çµ± å‰¯ç¨‹å¼ï¼š		    å°å‡ºæˆ¿å­ä¸²åˆ—ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š		  	 ///
-int printHouse(house *head_hou, landlord *head_lan) { /* æœç´¢åˆ°æˆ¿å­å¾Œï¼šå°å‡ºæˆ¿å­ä¸²åˆ—ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š */
+/// §ä©Ğ¤l¨t²Î °Æµ{¦¡¡G		    ¦L¥X©Ğ¤l¦ê¦C¡B¿ï¾Ü¬d¬İ¸ê°T		  	 ///
+int printHouse(house *head_hou, landlord *head_lan) { /* ·j¯Á¨ì©Ğ¤l«á¡G¦L¥X©Ğ¤l¦ê¦C¡B¿ï¾Ü¬d¬İ¸ê°T */
 
 	char name[15];
 	int num;
 	house *current_hou;
 	landlord *current_lan;
 
-	/* å°å‡ºæˆ¿å­ä¸²åˆ— */
-	printf("||> æ ¹æ“šä½ çš„é¸æ“‡ï¼Œç¬¦åˆæ¢ä»¶çš„æˆ¿å­æœ‰ï¼š \n");
+	/* ¦L¥X©Ğ¤l¦ê¦C */
+	printf("||> ®Ú¾Ú§Aªº¿ï¾Ü¡A²Å¦X±ø¥óªº©Ğ¤l¦³¡G \n");
 	printf("|--------------------------------------------------------------------\n");
 	current_hou = head_hou;
 	while (current_hou != NULL) {
@@ -415,8 +418,8 @@ int printHouse(house *head_hou, landlord *head_lan) { /* æœç´¢åˆ°æˆ¿å­å¾Œï¼šå
 		current_hou = current_hou->next;
 	}
 
-	/* æŸ¥çœ‹æˆ¿å­çš„è©³ç´°è³‡è¨Š */
-	printf("||> è«‹è¼¸å…¥æˆ¿æ±åå­—&åºè™Ÿä»¥æŸ¥çœ‹è©³ç´°è³‡è¨Š(ex. \"Joe 0\"). \n|>> ");
+	/* ¬d¬İ©Ğ¤lªº¸Ô²Ó¸ê°T */
+	printf("||> ½Ğ¿é¤J©ĞªF¦W¦r&§Ç¸¹¥H¬d¬İ¸Ô²Ó¸ê°T(ex. \"Joe 0\"). \n|>> ");
 	scanf("%s %d", name, &num);
 	current_lan = head_lan;
 	while (current_lan != NULL) {
@@ -429,7 +432,7 @@ int printHouse(house *head_hou, landlord *head_lan) { /* æœç´¢åˆ°æˆ¿å­å¾Œï¼šå
 		current_hou = current_hou->next;
 	}
 
-	printf("||>ä½ é¸æ“‡çš„æˆ¿å­ï¼š\n");
+	printf("||>§A¿ï¾Üªº©Ğ¤l¡G\n");
 	printf("|====================================================================\n");
 	printf("||>> Landlord Infomation: \n |> Name: %-15s Star: %-2d Number of house: %-2d \n |> Contact1: %-30s \n |> Contact2: %-30s\n",
 		current_lan->LandlordName, current_lan->Star, current_lan->NumberOfHouse, current_lan->Contact1, current_lan->Contact2);
@@ -441,13 +444,13 @@ int printHouse(house *head_hou, landlord *head_lan) { /* æœç´¢åˆ°æˆ¿å­å¾Œï¼šå
 		current_hou->Pet, current_hou->Facilities);
 	printf("|====================================================================\n");
 
-	/* æ˜¯å¦é‡æ–°ç¯©é¸åˆ¤æ–· */
+	/* ¬O§_­«·s¿z¿ï§PÂ_ */
 	int state = 0;
-	printf("||> æ˜¯å¦é‡æ–°ç¯©é¸æˆ¿å­ï¼Ÿ0ï¼šå¦ï¼›2ï¼šæ˜¯ (ex. \"2\") \n|>> ");
+	printf("||> ¬O§_­«·s¿z¿ï©Ğ¤l¡H0¡G§_¡F2¡G¬O (ex. \"2\") \n|>> ");
 	scanf("%d", &state);
 	fflush(stdin);
 	while (state != 0 && state != 2) {
-		printf("||> æ˜¯å¦é‡æ–°ç¯©é¸æˆ¿å­ï¼Ÿ0ï¼šå¦ï¼›2ï¼šæ˜¯ (ex. \"0\") \n|>> ");
+		printf("||> ¬O§_­«·s¿z¿ï©Ğ¤l¡H0¡G§_¡F2¡G¬O (ex. \"0\") \n|>> ");
 		scanf("%d", &state);
 		fflush(stdin);
 	}
@@ -456,7 +459,7 @@ int printHouse(house *head_hou, landlord *head_lan) { /* æœç´¢åˆ°æˆ¿å­å¾Œï¼šå
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// æ‰¾æˆ¿å­ç³»çµ± å‰¯ç¨‹å¼ï¼š		    è¼¸å…¥æ¢ä»¶ & ç¯©é¸æˆ¿å­		  	 ///
+/// §ä©Ğ¤l¨t²Î °Æµ{¦¡¡G		    ¿é¤J±ø¥ó & ¿z¿ï©Ğ¤l		  	 ///
 int houseFilter(house *head_hou, landlord *head_lan) {
 	house *current_hou;
 	house *tempNode;
@@ -469,43 +472,43 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	char filter5[5];
 	for (cnt = 0; cnt < 6; cnt++) filter[cnt] = 0;
 
-	printf("\n||> æ­¡è¿é€²å…¥æ‰¾æˆ¿å­ç³»çµ±ï¼ <|\n");
-	printf("||> è«‹æŒ‰è¦æ±‚è¼¸å…¥ç¯©é¸æ¢ä»¶ <|\n");
-	printf("||> æ‰€æœ‰å¯ç¯©é¸æ¢ä»¶ï¼šåªæ•¸ã€æˆ¿ç§Ÿã€å…¥ä½äººæ•¸ã€ç¶²è·¯å“è³ªã€å¥—æˆ¿/é›…æˆ¿ã€å¯å¦é¤Šå¯µ.\n");
+	printf("\n||> Åwªï¶i¤J§ä©Ğ¤l¨t²Î¡I <|\n");
+	printf("||> ½Ğ«ö­n¨D¿é¤J¿z¿ï±ø¥ó <|\n");
+	printf("||> ©Ò¦³¥i¿z¿ï±ø¥ó¡G©W¼Æ¡B©Ğ¯²¡B¤J¦í¤H¼Æ¡Bºô¸ô«~½è¡B®M©Ğ/¶®©Ğ¡B¥i§_¾iÃd.\n");
 	printf("|=======================================================================\n");
 
-	printf("||> ç¯©é¸åªæ•¸ï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šç¯„åœ
+	printf("||> ¿z¿ï©W¼Æ¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡G½d³ò
 	scanf("%d", &filter[0]);
 	if (filter[0]) {
-		printf("||> è«‹è¼¸å…¥ç¯„åœ(ex. \"10.5 20\")(å·¦<å³): \n|>> ");
+		printf("||> ½Ğ¿é¤J½d³ò(ex. \"10.5 20\")(¥ª<¥k): \n|>> ");
 		scanf("%lf %lf", &filter0_a, &filter0_b);
 		fflush(stdin);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (filter0_a < 0 || filter0_b < 0 || filter0_a >= filter0_b) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„ç¯„åœ(ex. \"0 36.5\")(å·¦<å³): \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº½d³ò(ex. \"0 36.5\")(¥ª<¥k): \n|>> ");
 			scanf("%lf %lf", &filter0_a, &filter0_b);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_hou = head_hou;
 		while (current_hou != NULL) {
 
 			if (current_hou->Area<filter0_a || current_hou->Area>filter0_b) {
 				tempNode = current_hou;
-				if (current_hou == head_hou && current_hou->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_hou == head_hou && current_hou->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_hou = NULL; current_hou = NULL;
 				}
-				else if (current_hou->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_hou->next == NULL) { // ¦ê¦C¥½§À
 					current_hou = current_hou->prev;
 					current_hou->next = NULL;
 					current_hou = NULL;
 				}
-				else if (current_hou == head_hou) { // ä¸²åˆ—é–‹é ­
+				else if (current_hou == head_hou) { // ¦ê¦C¶}ÀY
 					head_hou = head_hou->next;
 					head_hou->prev = head_hou;
 					current_hou = head_hou;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_hou = current_hou->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -518,38 +521,38 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸æˆ¿ç§Ÿï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šç¯„åœ
+	printf("||> ¿z¿ï©Ğ¯²¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡G½d³ò
 	scanf("%d", &filter[1]);
 	if (filter[1]) {
-		printf("||> è«‹è¼¸å…¥ç¯„åœ(ex. \"3000 4000\")(å·¦<å³): \n|>> ");
+		printf("||> ½Ğ¿é¤J½d³ò(ex. \"3000 4000\")(¥ª<¥k): \n|>> ");
 		scanf("%lf %lf", &filter1_a, &filter1_b);
 		fflush(stdin);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (filter1_a < 0 || filter1_b < 0 || filter1_a >= filter1_b) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„ç¯„åœ(ex. \"2000 8000\")(å·¦<å³): \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº½d³ò(ex. \"2000 8000\")(¥ª<¥k): \n|>> ");
 			scanf("%lf %lf", &filter1_a, &filter1_b);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_hou = head_hou;
 		while (current_hou != NULL) {
 
 			if (current_hou->Rent<filter1_a || current_hou->Rent>filter1_b) {
 				tempNode = current_hou;
-				if (current_hou == head_hou && current_hou->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_hou == head_hou && current_hou->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_hou = NULL; current_hou = NULL;
 				}
-				else if (current_hou->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_hou->next == NULL) { // ¦ê¦C¥½§À
 					current_hou = current_hou->prev;
 					current_hou->next = NULL;
 					current_hou = NULL;
 				}
-				else if (current_hou == head_hou) { // ä¸²åˆ—é–‹é ­
+				else if (current_hou == head_hou) { // ¦ê¦C¶}ÀY
 					head_hou = head_hou->next;
 					head_hou->prev = head_hou;
 					current_hou = head_hou;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_hou = current_hou->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -562,38 +565,38 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸å…¥ä½äººæ•¸ï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n||> "); // ç¯©é¸ï¼šç¯„åœ
+	printf("||> ¿z¿ï¤J¦í¤H¼Æ¡H¬O¡G1¡F§_¡G0 \n||> "); // ¿z¿ï¡G½d³ò
 	scanf("%d", &filter[2]);
 	if (filter[2]) {
-		printf("||> è«‹è¼¸å…¥ç¯„åœ(ex. \"1 1\")(å·¦<=å³): \n|>> ");
+		printf("||> ½Ğ¿é¤J½d³ò(ex. \"1 1\")(¥ª<=¥k): \n|>> ");
 		scanf("%d %d", &filter2_a, &filter2_b);
 		fflush(stdin);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (filter2_a <= 0 || filter2_b <= 0 || filter2_a > filter2_b) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„ç¯„åœ(ex. \"2 5\")(å·¦<=å³): \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº½d³ò(ex. \"2 5\")(¥ª<=¥k): \n|>> ");
 			scanf("%d %d", &filter2_a, &filter2_b);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_hou = head_hou;
 		while (current_hou != NULL) {
 
 			if (current_hou->PeopleNumber<filter2_a || current_hou->PeopleNumber>filter2_b) {
 				tempNode = current_hou;
-				if (current_hou == head_hou && current_hou->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_hou == head_hou && current_hou->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_hou = NULL; current_hou = NULL;
 				}
-				else if (current_hou->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_hou->next == NULL) { // ¦ê¦C¥½§À
 					current_hou = current_hou->prev;
 					current_hou->next = NULL;
 					current_hou = NULL;
 				}
-				else if (current_hou == head_hou) { // ä¸²åˆ—é–‹é ­
+				else if (current_hou == head_hou) { // ¦ê¦C¶}ÀY
 					head_hou = head_hou->next;
 					head_hou->prev = head_hou;
 					current_hou = head_hou;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_hou = current_hou->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -606,38 +609,38 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸ç¶²è·¯å“è³ªï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šå¤šé¸
+	printf("||> ¿z¿ïºô¸ô«~½è¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡G¦h¿ï
 	scanf("%d", &filter[3]);
 	if (filter[3]) {
-		printf("||> ç„¡ç¶²è·¯ï¼šNoï¼›æœ‰ç¶²è·¯,20Mï¼š20Mï¼›æœ‰ç¶²è·¯,60Mï¼š60Mï¼›æœ‰ç¶²è·¯,100Mï¼š100M(ex. \"20M\") \n|>> ");
+		printf("||> µLºô¸ô¡GNo¡F¦³ºô¸ô,20M¡G20M¡F¦³ºô¸ô,60M¡G60M¡F¦³ºô¸ô,100M¡G100M(ex. \"20M\") \n|>> ");
 		scanf("%s", filter3);
 		fflush(stdin);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (strcasecmp(filter3, "No") && strcasecmp(filter3, "20M") && strcasecmp(filter3, "60M") && strcasecmp(filter3, "100M")) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤(ex. \"No\") \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº«ü¥O(ex. \"No\") \n|>> ");
 			scanf("%s", filter3);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_hou = head_hou;
 		while (current_hou != NULL) {
 
 			if (strncasecmp(current_hou->Network, filter3, 2)) {
 				tempNode = current_hou;
-				if (current_hou == head_hou && current_hou->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_hou == head_hou && current_hou->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_hou = NULL; current_hou = NULL;
 				}
-				else if (current_hou->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_hou->next == NULL) { // ¦ê¦C¥½§À
 					current_hou = current_hou->prev;
 					current_hou->next = NULL;
 					current_hou = NULL;
 				}
-				else if (current_hou == head_hou) { // ä¸²åˆ—é–‹é ­
+				else if (current_hou == head_hou) { // ¦ê¦C¶}ÀY
 					head_hou = head_hou->next;
 					head_hou->prev = head_hou;
 					current_hou = head_hou;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_hou = current_hou->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -650,37 +653,37 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸å¥—æˆ¿/é›…æˆ¿ï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šé›™é¸
+	printf("||> ¿z¿ï®M©Ğ/¶®©Ğ¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡GÂù¿ï
 	scanf("%d", &filter[4]);
 	if (filter[4]) {
-		printf("||> å¥—æˆ¿ï¼šSuiteï¼›é›…æˆ¿ï¼šShare(ex. \"suite\") \n|>> ");
+		printf("||> ®M©Ğ¡GSuite¡F¶®©Ğ¡GShare(ex. \"suite\") \n|>> ");
 		scanf("%s", filter4);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (strcasecmp(filter4, "Suite") && strcasecmp(filter4, "Share")) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤(ex. \"Share\") \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº«ü¥O(ex. \"Share\") \n|>> ");
 			scanf("%s", filter4);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_hou = head_hou;
 		while (current_hou != NULL) {
 
 			if (current_hou->RoomType[1] != filter4[1]) {
 				tempNode = current_hou;
-				if (current_hou == head_hou && current_hou->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_hou == head_hou && current_hou->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_hou = NULL; current_hou = NULL;
 				}
-				else if (current_hou->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_hou->next == NULL) { // ¦ê¦C¥½§À
 					current_hou = current_hou->prev;
 					current_hou->next = NULL;
 					current_hou = NULL;
 				}
-				else if (current_hou == head_hou) { // ä¸²åˆ—é–‹é ­
+				else if (current_hou == head_hou) { // ¦ê¦C¶}ÀY
 					head_hou = head_hou->next;
 					head_hou->prev = head_hou;
 					current_hou = head_hou;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_hou = current_hou->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -693,37 +696,37 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸å¯å¦é¤Šå¯µï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šé›™é¸
+	printf("||> ¿z¿ï¥i§_¾iÃd¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡GÂù¿ï
 	scanf("%d", &filter[5]);
 	if (filter[5]) {
-		printf("||> å¯é¤Šå¯µç‰©ï¼šYesï¼›ä¸å¯é¤Šå¯µç‰©ï¼šNo(ex. \"no\") \n|>> ");
+		printf("||> ¥i¾iÃdª«¡GYes¡F¤£¥i¾iÃdª«¡GNo(ex. \"no\") \n|>> ");
 		scanf("%s", filter5);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (strcasecmp(filter5, "es") && strcasecmp(filter5, "No")) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤(ex. \"Yes\") \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº«ü¥O(ex. \"Yes\") \n|>> ");
 			scanf("%s", filter5);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_hou = head_hou;
 		while (current_hou != NULL) {
 
 			if (strncasecmp(current_hou->Pet, filter5, 2)) {
 				tempNode = current_hou;
-				if (current_hou == head_hou && current_hou->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_hou == head_hou && current_hou->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_hou = NULL; current_hou = NULL;
 				}
-				else if (current_hou->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_hou->next == NULL) { // ¦ê¦C¥½§À
 					current_hou = current_hou->prev;
 					current_hou->next = NULL;
 					current_hou = NULL;
 				}
-				else if (current_hou == head_hou) { // ä¸²åˆ—é–‹é ­
+				else if (current_hou == head_hou) { // ¦ê¦C¶}ÀY
 					head_hou = head_hou->next;
 					head_hou->prev = head_hou;
 					current_hou = head_hou;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_hou = current_hou->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -737,15 +740,15 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 
 	printf("|===============================\n");
 
-	/* if æ²’æœ‰æˆ¿å­ */
+	/* if ¨S¦³©Ğ¤l */
 	if (head_hou == NULL) {
-		printf("||> ç„¡ç¬¦åˆè¦æ±‚çš„æˆ¿å­ï¼ <| \n");
-		printf("||> é‡æ–°é€²å…¥ç³»çµ±ç¯©é¸ã€‚ <| \n");
-		return 2; // é‡æ–°é€²å…¥ç³»çµ±ç¯©é¸
+		printf("||> µL²Å¦X­n¨Dªº©Ğ¤l¡I <| \n");
+		printf("||> ­«·s¶i¤J¨t²Î¿z¿ï¡C <| \n");
+		return 2; // ­«·s¶i¤J¨t²Î¿z¿ï
 	}
-	/* if æœ‰æˆ¿å­ */
+	/* if ¦³©Ğ¤l */
 	else {
-		int state = printHouse(head_hou, head_lan); // å°å‡ºç¬¦åˆæ¢ä»¶æˆ¿å­ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š
+		int state = printHouse(head_hou, head_lan); // ¦L¥X²Å¦X±ø¥ó©Ğ¤l¡B¿ï¾Ü¬d¬İ¸ê°T
 		return state;
 	}
 
@@ -753,33 +756,33 @@ int houseFilter(house *head_hou, landlord *head_lan) {
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// æ‰¾å®¤å‹ç³»çµ± ä¸»ç¨‹å¼ï¼š		    æ‰¾å®¤å‹ç³»çµ±é€²å…¥é»		  	 ///
+/// §ä«Ç¤Í¨t²Î ¥Dµ{¦¡¡G		    §ä«Ç¤Í¨t²Î¶i¤JÂI		  	 ///
 void findRoomer() {
 	roomer* head_roo = NULL;
 
-	/* é€²è¡Œç¯©é¸ & å›å‚³ç‹€æ…‹ */
-	// ç‹€æ…‹ 0ï¼šæˆåŠŸ&é€€å‡ºç¨‹å¼
-	// ç‹€æ…‹ 2ï¼šæˆåŠŸ&é‡æ–°ç¯©é¸
+	/* ¶i¦æ¿z¿ï & ¦^¶Çª¬ºA */
+	// ª¬ºA 0¡G¦¨¥\&°h¥Xµ{¦¡
+	// ª¬ºA 2¡G¦¨¥\&­«·s¿z¿ï
 	int state = 2;
 	while (state == 2) {
-		head_roo = roomerBuild(); // å»ºç«‹ roomer linked list
+		head_roo = roomerBuild(); // «Ø¥ß roomer linked list
 		state = roomerFilter(head_roo);
 	}
 
-	printf("||> é€€å‡ºæ‰¾å®¤å‹ç³»çµ±ï¼\n");
+	printf("||> °h¥X§ä«Ç¤Í¨t²Î¡I\n");
 	return;
 }
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// æ‰¾å®¤å‹ç³»çµ± å‰¯ç¨‹å¼ï¼š		    å°å‡ºå®¤å‹ä¸²åˆ—ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š		  	 ///
-int printRoomer(roomer *head_roo) { /* æœç´¢åˆ°å®¤å‹å¾Œï¼šå°å‡ºå®¤å‹ä¸²åˆ—ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š */
+/// §ä«Ç¤Í¨t²Î °Æµ{¦¡¡G		    ¦L¥X«Ç¤Í¦ê¦C¡B¿ï¾Ü¬d¬İ¸ê°T		  	 ///
+int printRoomer(roomer *head_roo) { /* ·j¯Á¨ì«Ç¤Í«á¡G¦L¥X«Ç¤Í¦ê¦C¡B¿ï¾Ü¬d¬İ¸ê°T */
 
 	char name[15];
 	roomer *current_roo;
 
-	/* å°å‡ºå®¤å‹ä¸²åˆ— */
-	printf("||> æ ¹æ“šä½ çš„é¸æ“‡ï¼Œç¬¦åˆæ¢ä»¶çš„å®¤å‹æœ‰ï¼š \n");
+	/* ¦L¥X«Ç¤Í¦ê¦C */
+	printf("||> ®Ú¾Ú§Aªº¿ï¾Ü¡A²Å¦X±ø¥óªº«Ç¤Í¦³¡G \n");
 	printf("|--------------------------------------------------------------------\n");
 	current_roo = head_roo;
 	while (current_roo != NULL) {
@@ -791,8 +794,8 @@ int printRoomer(roomer *head_roo) { /* æœç´¢åˆ°å®¤å‹å¾Œï¼šå°å‡ºå®¤å‹ä¸²åˆ—ã€
 		current_roo = current_roo->next;
 	}
 
-	/* æŸ¥çœ‹æˆ¿å­çš„è©³ç´°è³‡è¨Š */
-	printf("||> è«‹è¼¸å…¥å®¤å‹åå­—ä»¥æŸ¥çœ‹è©³ç´°è³‡è¨Š(ex. \"Jack\"). \n|>> ");
+	/* ¬d¬İ©Ğ¤lªº¸Ô²Ó¸ê°T */
+	printf("||> ½Ğ¿é¤J«Ç¤Í¦W¦r¥H¬d¬İ¸Ô²Ó¸ê°T(ex. \"Jack\"). \n|>> ");
 	scanf("%s", name);
 	current_roo = head_roo;
 	while (current_roo != NULL) {
@@ -800,7 +803,7 @@ int printRoomer(roomer *head_roo) { /* æœç´¢åˆ°å®¤å‹å¾Œï¼šå°å‡ºå®¤å‹ä¸²åˆ—ã€
 		current_roo = current_roo->next;
 	}
 
-	printf("||>ä½ é¸æ“‡çš„å®¤å‹ï¼š\n");
+	printf("||>§A¿ï¾Üªº«Ç¤Í¡G\n");
 	printf("|====================================================================\n");
 	printf("||>> Roomer Infomation: \n |> Name:%-15s Star:%-2d Gender:%-10s \n |> SleepTime:%2d:00 \n |> School:%-40s \n |> Nationality:%-20s \n |> Habit:%-20s \n |> Disease:%-20s \n",
 		current_roo->RoomerName, current_roo->Star,
@@ -808,13 +811,13 @@ int printRoomer(roomer *head_roo) { /* æœç´¢åˆ°å®¤å‹å¾Œï¼šå°å‡ºå®¤å‹ä¸²åˆ—ã€
 		current_roo->Nationality, current_roo->Habit, current_roo->Disease);
 	printf("|====================================================================\n");
 
-	/* æ˜¯å¦é‡æ–°ç¯©é¸åˆ¤æ–· */
+	/* ¬O§_­«·s¿z¿ï§PÂ_ */
 	int state = 0;
-	printf("||> æ˜¯å¦é‡æ–°ç¯©é¸å®¤å‹ï¼Ÿ0ï¼šå¦ï¼›2ï¼šæ˜¯ (ex. \"2\") \n|>> ");
+	printf("||> ¬O§_­«·s¿z¿ï«Ç¤Í¡H0¡G§_¡F2¡G¬O (ex. \"2\") \n|>> ");
 	scanf("%d", &state);
 	fflush(stdin);
 	while (state != 0 && state != 2) {
-		printf("||> æ˜¯å¦é‡æ–°ç¯©é¸å®¤å‹ï¼Ÿ0ï¼šå¦ï¼›2ï¼šæ˜¯ (ex. \"0\") \n|>> ");
+		printf("||> ¬O§_­«·s¿z¿ï«Ç¤Í¡H0¡G§_¡F2¡G¬O (ex. \"0\") \n|>> ");
 		scanf("%d", &state);
 		fflush(stdin);
 	}
@@ -823,7 +826,7 @@ int printRoomer(roomer *head_roo) { /* æœç´¢åˆ°å®¤å‹å¾Œï¼šå°å‡ºå®¤å‹ä¸²åˆ—ã€
 ///////////////////////////////////////////////
 
 ///////////////////////////////////////////////
-/// æ‰¾å®¤å‹ç³»çµ± å‰¯ç¨‹å¼ï¼š		    è¼¸å…¥æ¢ä»¶ & ç¯©é¸å®¤å‹		  	 ///
+/// §ä«Ç¤Í¨t²Î °Æµ{¦¡¡G		    ¿é¤J±ø¥ó & ¿z¿ï«Ç¤Í		  	 ///
 int roomerFilter(roomer *head_roo) {
 	roomer *current_roo;
 	roomer *tempNode;
@@ -836,43 +839,43 @@ int roomerFilter(roomer *head_roo) {
 
 	for (cnt = 0; cnt < 4; cnt++) filter[cnt] = 0;
 
-	printf("\n||> æ­¡è¿é€²å…¥æ‰¾å®¤å‹ç³»çµ±ï¼ <|\n");
-	printf("||> è«‹æŒ‰è¦æ±‚è¼¸å…¥ç¯©é¸æ¢ä»¶ <|\n");
-	printf("||> æ‰€æœ‰å¯ç¯©é¸æ¢ä»¶ï¼šæ€§åˆ¥ã€ç¡çœ æ™‚é–“ã€å­¸æ ¡ã€åœ‹ç±.\n");
+	printf("\n||> Åwªï¶i¤J§ä«Ç¤Í¨t²Î¡I <|\n");
+	printf("||> ½Ğ«ö­n¨D¿é¤J¿z¿ï±ø¥ó <|\n");
+	printf("||> ©Ò¦³¥i¿z¿ï±ø¥ó¡G©Ê§O¡BºÎ¯v®É¶¡¡B¾Ç®Õ¡B°êÄy.\n");
 	printf("|=======================================================================\n");
 
-	printf("||> ç¯©é¸æ€§åˆ¥ï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šé›™é¸
+	printf("||> ¿z¿ï©Ê§O¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡GÂù¿ï
 	scanf("%d", &filter[0]);
 	if (filter[0]) {
-		printf("||> ç”·ï¼šMaleï¼›å¥³ï¼šFemale(ex. \"Female\") \n|>> ");
+		printf("||> ¨k¡GMale¡F¤k¡GFemale(ex. \"Female\") \n|>> ");
 		scanf("%s", filter0);
 		fflush(stdin);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (strcasecmp(filter0, "Male") && strcasecmp(filter0, "Female")) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤(ex. \"male\") \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº«ü¥O(ex. \"male\") \n|>> ");
 			scanf("%s", filter0);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_roo = head_roo;
 		while (current_roo != NULL) {
 
 			if (strcasecmp(filter0, current_roo->Gender)) {
 				tempNode = current_roo;
-				if (current_roo == head_roo && current_roo->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_roo == head_roo && current_roo->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_roo = NULL; current_roo = NULL;
 				}
-				else if (current_roo->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_roo->next == NULL) { // ¦ê¦C¥½§À
 					current_roo = current_roo->prev;
 					current_roo->next = NULL;
 					current_roo = NULL;
 				}
-				else if (current_roo == head_roo) { // ä¸²åˆ—é–‹é ­
+				else if (current_roo == head_roo) { // ¦ê¦C¶}ÀY
 					head_roo = head_roo->next;
 					head_roo->prev = head_roo;
 					current_roo = head_roo;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_roo = current_roo->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -885,22 +888,22 @@ int roomerFilter(roomer *head_roo) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸ç¡çœ æ™‚é–“ï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šç¯„åœ
+	printf("||> ¿z¿ïºÎ¯v®É¶¡¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡G½d³ò
 	scanf("%d", &filter[1]);
 	if (filter[1]) {
-		printf("||> è«‹è¼¸å…¥ç¯„åœ(é™å®šæ™š20é»ï½éš”æ—¥6é»)(ex. \"20 1\"(20é»ï½1é»))(å·¦é‚Šæ™‚é–“è¼ƒæ—©): \n|>> ");
+		printf("||> ½Ğ¿é¤J½d³ò(­­©w±ß20ÂI¡ã¹j¤é6ÂI)(ex. \"20 1\"(20ÂI¡ã1ÂI))(¥ªÃä®É¶¡¸û¦­): \n|>> ");
 		scanf("%d %d", &filter1_a, &filter1_b);
 		fflush(stdin);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		if (filter1_a <= 6) filter1_a += 24; // may result in false time
 		if (filter1_b <= 6) filter1_b += 24; // may result in false time
 		while (filter1_a < 20 || filter1_a>30 || filter1_b < 20 || filter1_b>30 || filter1_a > filter1_b) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„ç¯„åœ(é™å®šæ™š20é»ï½éš”æ—¥6é»)(ex. \"23 23\"(23é»ï½1é»))(å·¦é‚Šæ™‚é–“è¼ƒæ—©) \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº½d³ò(­­©w±ß20ÂI¡ã¹j¤é6ÂI)(ex. \"23 23\"(23ÂI¡ã1ÂI))(¥ªÃä®É¶¡¸û¦­) \n|>> ");
 			scanf("%d %d", &filter1_a, &filter1_b);
 			if (filter1_a <= 6) filter1_a += 24; if (filter1_b <= 6) filter1_b += 24;
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		int tempTime;
 		current_roo = head_roo;
 
@@ -911,20 +914,20 @@ int roomerFilter(roomer *head_roo) {
 
 			if (tempTime<filter1_a || tempTime>filter1_b) {
 				tempNode = current_roo;
-				if (current_roo == head_roo && current_roo->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_roo == head_roo && current_roo->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_roo = NULL; current_roo = NULL;
 				}
-				else if (current_roo->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_roo->next == NULL) { // ¦ê¦C¥½§À
 					current_roo = current_roo->prev;
 					current_roo->next = NULL;
 					current_roo = NULL;
 				}
-				else if (current_roo == head_roo) { // ä¸²åˆ—é–‹é ­
+				else if (current_roo == head_roo) { // ¦ê¦C¶}ÀY
 					head_roo = head_roo->next;
 					head_roo->prev = head_roo;
 					current_roo = head_roo;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_roo = current_roo->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -937,38 +940,38 @@ int roomerFilter(roomer *head_roo) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸å­¸æ ¡ï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šå¤šé¸
+	printf("||> ¿z¿ï¾Ç®Õ¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡G¦h¿ï
 	scanf("%d", &filter[2]);
 	if (filter[2]) {
-		printf("||> é€¢ç”²å¤§å­¸ï¼šFï¼›æ±æµ·å¤§å­¸ï¼šTï¼›å°ä¸­ç§‘å¤§ï¼šSï¼›ä¸­èˆˆå¤§å­¸ï¼šNï¼›åƒ‘å…‰ç§‘å¤§ï¼šO(ex. \"F\") \n|>> ");
+		printf("||> ³{¥Ò¤j¾Ç¡GF¡FªF®ü¤j¾Ç¡GT¡F¥x¤¤¬ì¤j¡GS¡F¤¤¿³¤j¾Ç¡GN¡F¹´¥ú¬ì¤j¡GO(ex. \"F\") \n|>> ");
 		scanf("%c", &filter2);
 		fflush(stdin);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (filter2 != 'F' && filter2 != 'T' && filter2 != 'S' && filter2 != 'N' && filter2 != 'O') {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤(ex. \"T\") \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº«ü¥O(ex. \"T\") \n|>> ");
 			scanf("%c", &filter2);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_roo = head_roo;
 		while (current_roo != NULL) {
 
 			if (filter2 != current_roo->School[0]) {
 				tempNode = current_roo;
-				if (current_roo == head_roo && current_roo->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_roo == head_roo && current_roo->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_roo = NULL; current_roo = NULL;
 				}
-				else if (current_roo->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_roo->next == NULL) { // ¦ê¦C¥½§À
 					current_roo = current_roo->prev;
 					current_roo->next = NULL;
 					current_roo = NULL;
 				}
-				else if (current_roo == head_roo) { // ä¸²åˆ—é–‹é ­
+				else if (current_roo == head_roo) { // ¦ê¦C¶}ÀY
 					head_roo = head_roo->next;
 					head_roo->prev = head_roo;
 					current_roo = head_roo;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_roo = current_roo->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -981,37 +984,37 @@ int roomerFilter(roomer *head_roo) {
 	}
 
 	printf("|===============================\n");
-	printf("||> ç¯©é¸åœ‹ç±ï¼Ÿæ˜¯ï¼š1ï¼›å¦ï¼š0 \n|>> "); // ç¯©é¸ï¼šå¤šé¸
+	printf("||> ¿z¿ï°êÄy¡H¬O¡G1¡F§_¡G0 \n|>> "); // ¿z¿ï¡G¦h¿ï
 	scanf("%d", &filter[3]);
 	if (filter[3]) {
-		printf("||> å°ç£ï¼šTaiwanï¼›é¦¬ä¾†è¥¿äºï¼šMalaysiaï¼›æ—¥æœ¬ï¼šJapanï¼›å°åº¦å°¼è¥¿äºï¼šIndonesiaï¼›è²å¾‹è³“ï¼šPhilippineï¼›ä¸­åœ‹å¤§é™¸ï¼šChina(ex. \"Taiwan\") \n|>> ");
+		printf("||> ¥xÆW¡GTaiwan¡F°¨¨Ó¦è¨È¡GMalaysia¡F¤é¥»¡GJapan¡F¦L«×¥§¦è¨È¡GIndonesia¡Fµá«ß»«¡GPhilippine¡F¤¤°ê¤j³°¡GChina(ex. \"Taiwan\") \n|>> ");
 		scanf("%s", filter3);
-		/* åˆ¤å®šè¼¸å…¥æœ‰æ•ˆ */
+		/* §P©w¿é¤J¦³®Ä */
 		while (strcasecmp(filter3, "Taiwan") && strcasecmp(filter3, "Malaysia") && strcasecmp(filter3, "Japan") && strcasecmp(filter3, "Indonesia") && strcasecmp(filter3, "Philippine") && strcasecmp(filter3, "China")) {
-			printf("||> è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤(ex. \"Suite\") \n|>> ");
+			printf("||> ½Ğ¿é¤J¥¿½Tªº«ü¥O(ex. \"Suite\") \n|>> ");
 			scanf("%s", filter3);
 			fflush(stdin);
 		}
-		/* åˆªé™¤ä¸ç¬¦åˆè¦æ±‚çš„node */
+		/* §R°£¤£²Å¦X­n¨Dªºnode */
 		current_roo = head_roo;
 		while (current_roo != NULL) {
 
 			if (strcasecmp(filter3, current_roo->Nationality)) {
 				tempNode = current_roo;
-				if (current_roo == head_roo && current_roo->next == NULL) { // å–®ä¸€ç¯€é»ä¸²åˆ—
+				if (current_roo == head_roo && current_roo->next == NULL) { // ³æ¤@¸`ÂI¦ê¦C
 					head_roo = NULL; current_roo = NULL;
 				}
-				else if (current_roo->next == NULL) { // ä¸²åˆ—æœ«å°¾
+				else if (current_roo->next == NULL) { // ¦ê¦C¥½§À
 					current_roo = current_roo->prev;
 					current_roo->next = NULL;
 					current_roo = NULL;
 				}
-				else if (current_roo == head_roo) { // ä¸²åˆ—é–‹é ­
+				else if (current_roo == head_roo) { // ¦ê¦C¶}ÀY
 					head_roo = head_roo->next;
 					head_roo->prev = head_roo;
 					current_roo = head_roo;
 				}
-				else { // ä¸²åˆ—ä¸­é–“
+				else { // ¦ê¦C¤¤¶¡
 					current_roo = current_roo->prev;
 					tempNode->prev->next = tempNode->next;
 					tempNode->next->prev = tempNode->prev;
@@ -1025,193 +1028,193 @@ int roomerFilter(roomer *head_roo) {
 
 	printf("|===============================\n");
 
-	/* if æ²’æœ‰æˆ¿å­ */
+	/* if ¨S¦³©Ğ¤l */
 	if (head_roo == NULL) {
-		printf("||> ç„¡ç¬¦åˆè¦æ±‚çš„æˆ¿å­ï¼ <| \n");
-		printf("||> é‡æ–°é€²å…¥ç³»çµ±ç¯©é¸ã€‚ <| \n");
-		return 2; // é‡æ–°é€²å…¥ç³»çµ±ç¯©é¸
+		printf("||> µL²Å¦X­n¨Dªº©Ğ¤l¡I <| \n");
+		printf("||> ­«·s¶i¤J¨t²Î¿z¿ï¡C <| \n");
+		return 2; // ­«·s¶i¤J¨t²Î¿z¿ï
 	}
-	/* if æœ‰æˆ¿å­ */
+	/* if ¦³©Ğ¤l */
 	else {
-		int state = printRoomer(head_roo); // å°å‡ºç¬¦åˆæ¢ä»¶å®¤å‹ã€é¸æ“‡æŸ¥çœ‹è³‡è¨Š
+		int state = printRoomer(head_roo); // ¦L¥X²Å¦X±ø¥ó«Ç¤Í¡B¿ï¾Ü¬d¬İ¸ê°T
 		return state;
 	}
 }
 ///////////////////////////////////////////////
-//æ–°å¢æˆ¿æ±,å®¤å‹è©•åˆ†ç³»çµ±
+//·s¼W©ĞªF,«Ç¤Íµû¤À¨t²Î
 void landlordGetScore(landlord *landlordHead)
 {
 	char name[20];
-	int score=0; 
-	
+	int score=0;
+
 	landlord*ptr,*fprint;
-	
-	ptr=landlordHead;//ptræ§åˆ¶æŒ‡æ¨™çš„ä½å€ 
-	
-	printf("--é€²å…¥æˆ¿æ±è©•åˆ†ç³»çµ±---\n");
-	printf("è«‹è¼¸å…¥éœ€è¦è©•åˆ†çš„å°è±¡\n");
+
+	ptr=landlordHead;//ptr±±¨î«ü¼Ğªº¦ì§}
+
+	printf("--¶i¤J©ĞªFµû¤À¨t²Î---\n");
+	printf("½Ğ¿é¤J»İ­nµû¤Àªº¹ï¶H\n");
 	scanf("%s",name);
-	
+
 	while(ptr!=NULL)
-	{ 
+	{
 	    if(strcmp(name,ptr->LandlordName)==0)
-	    {	 
-		 break;//é€™å€‹è©•åˆ†å°è±¡å­˜åœ¨
+	    {
+		 break;//³o­Óµû¤À¹ï¶H¦s¦b
 	    }
-	  ptr=ptr->next; 
-	} 
-	/*ptrç›®å‰ç‚ºå­˜åœ¨å°è±¡*/
-	
-	if(ptr != NULL)//åˆ¤æ–·è©•åˆ†å°è±¡å­˜ä¸å­˜åœ¨ 
-	{
-	    printf("è¼¸å…¥è¦è©•åˆ†å°è±¡çš„åˆ†æ•¸(1-10)\n");	
-		scanf("%d",&score);
-		
-		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1)//å·²ç¶“è¢«è©•åˆ†éä½†æ˜¯é‚„è¦è©•åˆ†çš„è§’è‰² 
-		{ 
-		  printf("---ä»¥è©•åˆ†éçš„å°è±¡---\n"); 
-		  ptr->Star = double(score+ptr->Star)/2; 
-		}
-		else if( score<=10 && score>=1)//å¾æœªè©•åˆ†è§’è‰² 
-		{ 
-		  ptr->Star=score; 
-		}
-		else //éŒ¯èª¤è©•åˆ† 
-		{
-		 printf("è©•åˆ†éŒ¯èª¤ ,ä½¿ç”¨è€…è¼¸å…¥ä¸åœ¨è©•åˆ†å…§(æç¤ºä½¿ç”¨è€…è¼¸å…¥éŒ¯èª¤è«‹é‡)");	
-		}
-		
-	} 
-	else//è§’è‰²ä¸å­˜åœ¨è¼¸å‡º 
-	{
-	 printf("è¼¸å…¥ä¸å­˜åœ¨åå­— æˆ–éŒ¯èª¤çš„æ•¸å­—");		
+	  ptr=ptr->next;
 	}
-    
+	/*ptr¥Ø«e¬°¦s¦b¹ï¶H*/
+
+	if(ptr != NULL)//§PÂ_µû¤À¹ï¶H¦s¤£¦s¦b
+	{
+	    printf("¿é¤J­nµû¤À¹ï¶Hªº¤À¼Æ(1-10)\n");
+		scanf("%d",&score);
+
+		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1)//¤w¸g³Qµû¤À¹L¦ı¬OÁÙ­nµû¤Àªº¨¤¦â
+		{
+		  printf("---¥Hµû¤À¹Lªº¹ï¶H---\n");
+		  ptr->Star = double(score+ptr->Star)/2;
+		}
+		else if( score<=10 && score>=1)//±q¥¼µû¤À¨¤¦â
+		{
+		  ptr->Star=score;
+		}
+		else //¿ù»~µû¤À
+		{
+		 printf("µû¤À¿ù»~ ,¨Ï¥ÎªÌ¿é¤J¤£¦bµû¤À¤º(´£¥Ü¨Ï¥ÎªÌ¿é¤J¿ù»~½Ğ­«)");
+		}
+
+	}
+	else//¨¤¦â¤£¦s¦b¿é¥X
+	{
+	 printf("¿é¤J¤£¦s¦b¦W¦r ©Î¿ù»~ªº¼Æ¦r");
+	}
+
 	if( score<=10 && score>=1)
-	{ 
-	 printf("è¼¸å…¥è¨˜æ†¶é«”çš„åˆ†æ•¸:%2d",ptr->Star); 
-	} 
+	{
+	 printf("¿é¤J°O¾ĞÅéªº¤À¼Æ:%2d",ptr->Star);
+	}
 	//////////////////////////////////////////////////
 	FILE *landlordFile;
 	landlordFile = fopen("LandlordDatabase.txt", "w");
-	
-	fprint=landlordHead;//æŒ‡æ¨™æŒ‡å‘æ¨™é ­ 
-	
+
+	fprint=landlordHead;//«ü¼Ğ«ü¦V¼ĞÀY
+
 	fprintf(landlordFile,"%-15s %-10s %-10s %-30s %-30s %-30s\n","Name","UserNumber","Star","NumberOfHouse","Contact1","Contact2");
-	while(fprint != NULL)//å°‡è©•åˆ†å®Œçš„æª”æ¡ˆè¼¸å…¥è³‡æ–™åº« 
+	while(fprint != NULL)//±Nµû¤À§¹ªºÀÉ®×¿é¤J¸ê®Æ®w
 	{
 	    fprintf(landlordFile,"%-15s %-10d %-10d %-30d %-30s %-30s \n",
 			     fprint->LandlordName, fprint->UserNumber, fprint->Star,
 			     fprint->NumberOfHouse, fprint->Contact1, fprint->Contact2);
-		 	
-	   fprint=fprint->next;	
+
+	   fprint=fprint->next;
 	}
-    
-	fclose(landlordFile);//é—œæª” 
-	
+
+	fclose(landlordFile);//ÃöÀÉ
+
 }
 void roomerGetScore(roomer*roomerHead)
 {
 
 	char name[20];
-	int i=0 , score=0; 
+	int i=0 , score=0;
 	roomer*ptr, *fprint;
-		
-	ptr=roomerHead;//ptræ§åˆ¶æŒ‡æ¨™çš„ä½å€ 
-	
-	printf("--é€²å…¥å®¤å‹è©•åˆ†ç³»çµ±---\n");
-	printf("è«‹è¼¸å…¥éœ€è¦è©•åˆ†çš„å°è±¡:\n");
-	scanf("%s",name);
-	
-	while(ptr!=NULL)
-	{ 
-	    if(strcmp(name,ptr->RoomerName)==0)
-	    {	     
-		  break;//é€™å€‹è©•åˆ†å°è±¡å­˜åœ¨
-	    }
-	  ptr=ptr->next; 
-	} 
 
-	/*ptrç›®å‰ç‚ºå­˜åœ¨å°è±¡*/
-	
-	if(ptr != NULL)//åˆ¤æ–·è©•åˆ†å°è±¡å­˜ä¸å­˜åœ¨ 
+	ptr=roomerHead;//ptr±±¨î«ü¼Ğªº¦ì§}
+
+	printf("--¶i¤J«Ç¤Íµû¤À¨t²Î---\n");
+	printf("½Ğ¿é¤J»İ­nµû¤Àªº¹ï¶H:\n");
+	scanf("%s",name);
+
+	while(ptr!=NULL)
 	{
-	    printf("è¼¸å…¥è¦è©•åˆ†å°è±¡çš„åˆ†æ•¸(1-10)\n");	
+	    if(strcmp(name,ptr->RoomerName)==0)
+	    {
+		  break;//³o­Óµû¤À¹ï¶H¦s¦b
+	    }
+	  ptr=ptr->next;
+	}
+
+	/*ptr¥Ø«e¬°¦s¦b¹ï¶H*/
+
+	if(ptr != NULL)//§PÂ_µû¤À¹ï¶H¦s¤£¦s¦b
+	{
+	    printf("¿é¤J­nµû¤À¹ï¶Hªº¤À¼Æ(1-10)\n");
 		scanf("%d",&score);
-		
-		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1 )//å·²ç¶“è¢«è©•åˆ†éä½†æ˜¯é‚„è¦è©•åˆ†çš„è§’è‰² 
+
+		if( score<=10 && score>=1 && ptr->Star<=10 && ptr->Star>=1 )//¤w¸g³Qµû¤À¹L¦ı¬OÁÙ­nµû¤Àªº¨¤¦â
 		{
-		  printf("---ä»¥è©•åˆ†éçš„å°è±¡---\n");
+		  printf("---¥Hµû¤À¹Lªº¹ï¶H---\n");
 		  ptr->Star = double(score+ptr->Star)/2;
 		}
-		else if( score<=10 && score>=1)//å¾æœªè©•åˆ†è§’è‰² 
-		{ 
-		  ptr->Star=score; 
-		}
-		else //éŒ¯èª¤è©•åˆ† 
+		else if( score<=10 && score>=1)//±q¥¼µû¤À¨¤¦â
 		{
-		  printf("è©•åˆ†éŒ¯èª¤ ,ä½¿ç”¨è€…è¼¸å…¥ä¸åœ¨è©•åˆ†å…§(æç¤ºä½¿ç”¨è€…è¼¸å…¥éŒ¯èª¤è«‹é‡)");	
+		  ptr->Star=score;
 		}
-		
-	} 
-	else //è§’è‰²ä¸å­˜åœ¨è¼¸å‡º 
-	{
-	 printf("è¼¸å…¥ä¸å­˜åœ¨åå­— æˆ–éŒ¯èª¤çš„æ•¸å­—");		
+		else //¿ù»~µû¤À
+		{
+		  printf("µû¤À¿ù»~ ,¨Ï¥ÎªÌ¿é¤J¤£¦bµû¤À¤º(´£¥Ü¨Ï¥ÎªÌ¿é¤J¿ù»~½Ğ­«)");
+		}
+
 	}
-   
+	else //¨¤¦â¤£¦s¦b¿é¥X
+	{
+	 printf("¿é¤J¤£¦s¦b¦W¦r ©Î¿ù»~ªº¼Æ¦r");
+	}
+
     if( score<=10 && score>=1)
 	{
-	   printf("è¼¸å…¥è¨˜æ†¶é«”çš„åˆ†æ•¸:%2d",ptr->Star);
+	   printf("¿é¤J°O¾ĞÅéªº¤À¼Æ:%2d",ptr->Star);
     }
 	//////////////////////////////////////////////////////
 	   FILE *roomerFile;
-	   roomerFile = fopen("RoomerDatabase.txt","w");//é–‹å•Ÿæª”æ¡ˆ 
+	   roomerFile = fopen("RoomerDatabase.txt","w");//¶}±ÒÀÉ®×
 	   fprint=roomerHead;
-	
+
 	   fprintf(roomerFile,"%-15s %-14s %-8s %-10s %-15s %-40s %-20s %-20s %-20s\n","Name","UserNumber","Star","Gender","SleepTime","School","Nationality","Habit","Disease");
-	   while(fprint!=NULL)//å°‡è©•åˆ†å®Œçš„æª”æ¡ˆè¼¸å…¥è³‡æ–™åº« 
+	   while(fprint!=NULL)//±Nµû¤À§¹ªºÀÉ®×¿é¤J¸ê®Æ®w
 	  {
 	     fprintf(roomerFile,"%-15s %-14d %-8d %-10s %-15d %-40s %-20s %-20s %-20s\n",
 			     fprint->RoomerName, fprint->UserNumber, fprint->Star,
 			     fprint->Gender, fprint->SleepTime, fprint->School,
-			     fprint->Nationality, fprint->Habit, fprint->Disease);	
-		 fprint=fprint->next;	
+			     fprint->Nationality, fprint->Habit, fprint->Disease);
+		 fprint=fprint->next;
 	  }
-    
-	fclose(roomerFile);//é—œæª” 
+
+	fclose(roomerFile);//ÃöÀÉ
 }
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
-///		    å‰¯ç¨‹å¼		  	 ///
+///		    °Æµ{¦¡		  	 ///
 ///////////////////////////////////////////////
 
-///é¡¯ç¤ºåŠŸèƒ½é¸å–®
+///Åã¥Ü¥\¯à¿ï³æ
 void show_menu() {
-    printf("<<æ­¡è¿ä½¿ç”¨æ‰¾å®¤å‹ç³»çµ±>>\n");
-    printf("æŒ‰ä¸‹æ•¸å­—éµé¸æ“‡æœå‹™\n");
-    printf("1.ç™»å…¥\t\t2.æ–°å¢å¸³è™Ÿ\n3.ä¿®æ”¹å¯†ç¢¼\t4.é›¢é–‹ç³»çµ±\n");
-    printf("è«‹è¼¸å…¥æœå‹™é¸é …:");
+    printf("<<Åwªï¨Ï¥Î§ä«Ç¤Í¨t²Î>>\n");
+    printf("«ö¤U¼Æ¦rÁä¿ï¾ÜªA°È\n");
+    printf("1.µn¤J\t\t2.·s¼W±b¸¹\n3.­×§ï±K½X\t4.Â÷¶}¨t²Î\n");
+    printf("½Ğ¿é¤JªA°È¿ï¶µ:");
 }
 
-///ç™»å…¥é©—è­‰///		*true = ç™»å…¥æˆåŠŸ *false = ç™»å…¥å¤±æ•—
+///µn¤JÅçÃÒ///		*true = µn¤J¦¨¥\ *false = µn¤J¥¢±Ñ
 bool login(string acc,string pas) {
     return true;
 }
 
-///å‰µå»ºå¸³è™Ÿ///		*true = å‰µå»ºæˆåŠŸ *false = å‰µå»ºå¤±æ•—
+///³Ğ«Ø±b¸¹///		*true = ³Ğ«Ø¦¨¥\ *false = ³Ğ«Ø¥¢±Ñ
 bool create_account(string acc,string pas) {
 
 }
 
-///æ›´æ”¹å¯†ç¢¼
+///§ó§ï±K½X
 void mutator(string pas) {
 
 }
 
-//è¨»è¨˜ èˆ‡è³‡æ–™åº«é€£å‹•çš„user numberå–å¾—å‰¯ç¨‹å¼é‚„é ˆæ–°å¢ <<äºŒæ“‡ä¸€>> 1.ç™»å…¥é©—è­‰å›å‚³å€¼ç‚ºint = user number  2.å¤šå¯«ä¸€å€‹get user numberçš„å‰¯ç¨‹å¼
+//µù°O »P¸ê®Æ®w³s°Êªºuser number¨ú±o°Æµ{¦¡ÁÙ¶··s¼W <<¤G¾Ü¤@>> 1.µn¤JÅçÃÒ¦^¶Ç­È¬°int = user number  2.¦h¼g¤@­Óget user numberªº°Æµ{¦¡
 
-///å–å¾—ä½¿ç”¨è€…ç·¨è™Ÿ
+///¨ú±o¨Ï¥ÎªÌ½s¸¹
 int get_user_number(string acc,string pas){
 
 }
