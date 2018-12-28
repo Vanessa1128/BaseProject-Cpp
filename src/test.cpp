@@ -196,7 +196,7 @@ Account* acc_node() {
 ///創建帳號///		*true = 創建成功 *false = 創建失敗
 bool create_account(char acc[],char pas[],char type) {
     FILE *acc_open;
-    acc_open = fopen("accountDatabase.txt", "w");
+    acc_open = fopen("accountDatabase.txt", "a");
     if (acc_open == NULL) {
         printf("無法連接帳號資料庫!!\n");
         system("pause");
@@ -212,7 +212,6 @@ bool create_account(char acc[],char pas[],char type) {
     head_acc->previous = head_acc;
 	current_acc = head_acc;
 	while (fscanf(acc_open,"%d %c %s %s",&current_acc->num, &current_acc->type, current_acc->account,current_acc->password) != EOF) {
-
 		current_acc->next = acc_node();
 		current_acc->previous = current_acc;
 		current_acc = current_acc->next;
@@ -221,7 +220,7 @@ bool create_account(char acc[],char pas[],char type) {
 	}
 
 
-    fprintf(acc_open,"%d\t%c\t%s\t%s",num,type,acc,pas);
+    fprintf(acc_open,"%d\t%c\t%s\t%s\n",num,type,acc,pas);
     fclose(acc_open);
     return true;
 }
