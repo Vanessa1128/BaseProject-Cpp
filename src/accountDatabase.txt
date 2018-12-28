@@ -4,3 +4,5 @@ num	type	account	password
 2	r	room2	0000
 3	r	room3	1234
 4	l	lord	1005
+
+
