@@ -17,19 +17,19 @@ int get_user_number(string acc,string pas);///取得使用者編號
 //////////////////////////////////////////////
 ///登入系統結構宣告
 //////////////////////////////////////////////
-typedef struct {
+typedef struct account_database_title{
 	char num[8]; char type[8]; char acc[8];
 	char pas[8];
-} account_database_title;//接收帳戶資料庫的第一行
+}Title;//接收帳戶資料庫的第一行
 
-typedef struct account{//帳號結構
+typedef struct account_data{//帳號結構
 	int num[8];
 	char type;
 	char account[20];
 	char password[20];
 
 	struct account *next, *previous;
-} account_data;
+} Account;
 //////////////////////////////////////////////
 
 
@@ -151,6 +151,11 @@ int main() {
         bool validate;
         validate = login(acc,pas);
         if(validate == true){
+            /*
+
+
+
+            */
             system("CLS");
             printf("\n\t==已登入!!==\n\n");
             system("pause");
