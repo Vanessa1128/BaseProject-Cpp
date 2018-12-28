@@ -305,12 +305,12 @@ landlord* landlordBuild() {
 	free(temp1);
 
 	// 測試印出 landlord link list
-	current_lan = head_lan;
+	/*current_lan = head_lan;
 	printf("\n測試印出：\n");
 	while (current_lan != NULL) {
 		printf("%-15s %-2d %-2d %-2d %-30s %-30s\n", current_lan->LandlordName, current_lan->UserNumber, current_lan->Star, current_lan->NumberOfHouse, current_lan->Contact1, current_lan->Contact2);
 		current_lan = current_lan->next;
-	} printf("\n以上測試印出\n");
+	} printf("\n以上測試印出\n");*/
 
 	// 關文件
 	fclose(landlordFile);
@@ -356,7 +356,7 @@ house* houseBuild() {
 	free(temp);
 
 	// 測試印出 house link list
-	current_hou = head_hou;
+	/*current_hou = head_hou;
 	printf("\n測試印出：\n");
 	while (current_hou != NULL) {
 		printf("%-5s %2d %-7g %-7g %-7g %-30s %-2d %-13s %-10s %-5s %-100s\n",
@@ -365,7 +365,7 @@ house* houseBuild() {
 			current_hou->PeopleNumber, current_hou->Network, current_hou->RoomType,
 			current_hou->Pet, current_hou->Facilities);
 		current_hou = current_hou->next;
-	} printf("\n以上測試印出\n");
+	} printf("\n以上測試印出\n");*/
 
 	// 關文件
 	fclose(houseFile);
@@ -410,7 +410,7 @@ roomer* roomerBuild() { /* roomer 資料庫導出到 Linked List */
 	free(temp1);
 
 	// 測試印出 landlord link list
-	current_roo = head_roo;
+	/*current_roo = head_roo;
 	printf("\n測試印出：\n");
 	while (current_roo != NULL) {
 		printf("%-15s %-2d %-2d %-10s %2d:00 %-40s %-20s %-20s %-20s\n",
@@ -418,7 +418,7 @@ roomer* roomerBuild() { /* roomer 資料庫導出到 Linked List */
 			current_roo->Gender, current_roo->SleepTime, current_roo->School,
 			current_roo->Nationality, current_roo->Habit, current_roo->Disease);
 		current_roo = current_roo->next;
-	} printf("\n以上測試印出\n");
+	} printf("\n以上測試印出\n");*/
 
 	// 關文件
 	fclose(roomerFile);
